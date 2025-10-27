@@ -685,6 +685,110 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #db2777, #7c3aed);
         }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .book-container {
+                width: 260px;
+                height: 340px;
+            }
+            
+            .ranking-number {
+                font-size: 2rem;
+            }
+            
+            .ranking-description {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                width: 120px;
+                height: 50px;
+            }
+            
+            .book-container {
+                width: 220px;
+                height: 300px;
+            }
+            
+            .ranking-card {
+                padding: 1rem;
+            }
+            
+            .ranking-number {
+                font-size: 1.75rem;
+            }
+            
+            .ranking-description {
+                font-size: 0.75rem;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+            
+            .cyber-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .logo {
+                width: 100px;
+                height: 40px;
+            }
+            
+            .book-container {
+                width: 200px;
+                height: 280px;
+            }
+            
+            .ranking-card {
+                padding: 0.75rem;
+            }
+            
+            .ranking-number {
+                font-size: 1.5rem;
+            }
+            
+            .ranking-description {
+                font-size: 0.7rem;
+            }
+            
+            .stat-card {
+                padding: 0.75rem;
+            }
+            
+            .cyber-card {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                width: 90px;
+                height: 35px;
+            }
+            
+            .book-container {
+                width: 180px;
+                height: 240px;
+            }
+            
+            .ranking-card {
+                padding: 0.5rem;
+            }
+            
+            .ranking-number {
+                font-size: 1.25rem;
+            }
+            
+            .ranking-description {
+                font-size: 0.65rem;
+            }
+        }
     </style>
 </head>
 <body class="futuristic-bg">
@@ -695,55 +799,72 @@
     <div class="morphing-grid"></div>
     
     <!-- Header Section with Integrated Logo -->
-    <header class="header-gradient text-white py-4 px-6 shadow-lg">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <header class="header-gradient text-white py-4 px-4 sm:px-6 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <!-- Logo Section - Matching the MCA code -->
             <div class="flex items-center space-x-3">
                 <div class="logo">
                     <img src="VIT.png" alt="VIT University Logo">
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold">VIT University</h1>
+                    <h1 class="text-lg sm:text-xl font-bold">VIT University</h1>
                     <p class="text-xs text-blue-100">UGC Approved Online Degree Programmes</p>
                 </div>
             </div>
             
             <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8">
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
                 <a href="Home.html" class="font-medium hover:text-blue-200 transition-colors"></a>
                 <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
                 <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors"></a>
                 <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
             </nav>
             
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
             <!-- CTA Button -->
-            <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105">
+            <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" class="px-4 py-2 sm:px-5 sm:py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105 text-sm sm:text-base">
                 Apply Now
             </a>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mt-4 hidden">
+            <div class="flex flex-col space-y-3">
+                <a href="Home.html" class="font-medium hover:text-blue-200 transition-colors"></a>
+                <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
+                <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors"></a>
+                <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 relative overflow-hidden section-light" id="heroSection">
+    <section class="pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 relative overflow-hidden section-light" id="heroSection">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="relative z-10" data-aos="fade-right">
-                    <div class="mb-6">
-                        <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">UGC ENROLLED</span>
+                    <div class="mb-4 sm:mb-6">
+                        <span class="px-3 py-1 sm:px-4 sm:py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-medium">UGC ENROLLED</span>
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6">
                         <span class="gradient-text">M.Sc. Data Science</span>
                         <br>
                         <span class="glitch-text" data-text="(Online)">(Online)</span>
                     </h1>
-                    <p class="text-xl text-gray-700 mb-8 max-w-2xl">
+                    <p class="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-2xl">
                         Pursue a master's in Data Science from India's top-ranked institution (Top 8 University in India - NIRF University Rankings, 2023). Earn a degree equivalent to on-campus degree.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#application" class="cyber-button px-8 py-4 text-lg shadow-lg">
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                        <a href="#application" class="cyber-button px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg shadow-lg text-center">
                             <i class="fas fa-rocket mr-2"></i> Apply Now
                         </a>
-                        <a href="#brochure" class="px-8 py-4 text-lg border border-purple-500 text-purple-600 rounded-full hover:bg-purple-50 transition-colors shadow-sm">
+                        <a href="#brochure" class="px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg border border-purple-500 text-purple-600 rounded-full hover:bg-purple-50 transition-colors shadow-sm text-center">
                             <i class="fas fa-download mr-2"></i> Get Your Brochure
                         </a>
                     </div>
@@ -762,8 +883,8 @@
                                     <div class="ds-icon mb-4">
                                         <i class="fas fa-chart-line"></i>
                                     </div>
-                                    <h3 class="text-white font-bold text-xl">VIT Online M.Sc. DS</h3>
-                                    <p class="text-white/80 mt-2">Click to Explore</p>
+                                    <h3 class="text-white font-bold text-lg sm:text-xl">VIT Online M.Sc. DS</h3>
+                                    <p class="text-white/80 mt-2 text-sm">Click to Explore</p>
                                 </div>
                                 
                                 <div class="book-pages">
@@ -790,8 +911,8 @@
     <style>
         .book-container {
             perspective: 1500px;
-            width: 320px;
-            height: 400px;
+            width: 280px;
+            height: 360px;
             margin: 0 auto;
         }
 
@@ -824,7 +945,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             backface-visibility: hidden;
         }
@@ -833,7 +954,7 @@
             position: absolute;
             left: 0;
             top: 10%;
-            width: 15px;
+            width: 12px;
             height: 80%;
             background: linear-gradient(to right, #7c3aed, #1d4ed8);
             border-radius: 2px 0 0 2px;
@@ -843,9 +964,9 @@
 
         .book-pages {
             position: absolute;
-            right: -40px;
+            right: -35px;
             top: 5%;
-            width: 40px;
+            width: 35px;
             height: 90%;
             transform-style: preserve-3d;
             transform: rotateY(90deg);
@@ -888,10 +1009,10 @@
 
         .book-top {
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 0;
             width: 100%;
-            height: 20px;
+            height: 15px;
             background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
             transform: rotateX(90deg);
             transform-origin: top center;
@@ -901,10 +1022,10 @@
 
         .book-bottom {
             position: absolute;
-            bottom: -20px;
+            bottom: -15px;
             left: 0;
             width: 100%;
-            height: 20px;
+            height: 15px;
             background: linear-gradient(to top, #8b5cf6, #3b82f6);
             transform: rotateX(-90deg);
             transform-origin: bottom center;
@@ -913,7 +1034,7 @@
         }
 
         .ds-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: white;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -921,13 +1042,13 @@
 
         .hint-text {
             position: absolute;
-            bottom: -50px;
+            bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.9);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: #8b5cf6;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             white-space: nowrap;
@@ -936,11 +1057,11 @@
 
         .shadow {
             position: absolute;
-            bottom: -30px;
+            bottom: -25px;
             left: 50%;
             transform: translateX(-50%);
-            width: 250px;
-            height: 20px;
+            width: 200px;
+            height: 15px;
             background: rgba(0, 0, 0, 0.1);
             border-radius: 50%;
             filter: blur(8px);
@@ -948,8 +1069,38 @@
 
         @media (max-width: 768px) {
             .book-container {
-                width: 260px;
-                height: 340px;
+                width: 220px;
+                height: 300px;
+            }
+            
+            .ds-icon {
+                font-size: 2rem;
+            }
+            
+            .hint-text {
+                font-size: 0.7rem;
+                padding: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .book-container {
+                width: 180px;
+                height: 240px;
+            }
+            
+            .book-cover {
+                padding: 1rem;
+            }
+            
+            .ds-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .hint-text {
+                font-size: 0.65rem;
+                bottom: -35px;
             }
         }
     </style>
@@ -1114,8 +1265,8 @@
             background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
             border: none;
             color: white;
-            padding: 12px 30px;
-            font-size: 1rem;
+            padding: 10px 20px;
+            font-size: 0.9rem;
             font-weight: 600;
             border-radius: 50px;
             overflow: hidden;
@@ -1148,8 +1299,8 @@
         /* Book Styles */
         .book-container {
             perspective: 1500px;
-            width: 300px;
-            height: 400px;
+            width: 280px;
+            height: 360px;
             margin: 0 auto;
             position: relative;
             z-index: 10;
@@ -1207,14 +1358,14 @@
         }
         
         .ds-icon {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             background: rgba(255, 255, 255, 0.25);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
             backdrop-filter: blur(10px);
             border: 3px solid rgba(255, 255, 255, 0.4);
@@ -1223,11 +1374,11 @@
         
         .hint-text {
             position: absolute;
-            bottom: 25px;
+            bottom: 20px;
             background: rgba(255, 255, 255, 0.25);
-            padding: 10px 18px;
+            padding: 8px 16px;
             border-radius: 25px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 500;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -1253,6 +1404,7 @@
             align-items: center;
             z-index: 1000;
             animation: popupFadeIn 0.5s ease-out;
+            padding: 20px;
         }
         
         @keyframes popupFadeIn {
@@ -1299,7 +1451,8 @@
         
         .popup-book {
             display: flex;
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             height: 500px;
             background: white;
             border-radius: 15px;
@@ -1313,7 +1466,7 @@
         
         .page {
             flex: 1;
-            padding: 35px;
+            padding: 25px;
             position: relative;
             overflow-y: auto;
         }
@@ -1334,9 +1487,9 @@
         }
         
         .page-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #1f2937;
             text-align: center;
             position: relative;
@@ -1357,14 +1510,14 @@
         .features-grid {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
         
         .feature-item {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            padding: 1.2rem;
+            gap: 1rem;
+            padding: 1rem;
             background: white;
             border-radius: 12px;
             box-shadow: 
@@ -1382,15 +1535,15 @@
         }
         
         .feature-icon {
-            width: 55px;
-            height: 55px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #8b5cf6, #3b82f6);
             border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
             flex-shrink: 0;
         }
@@ -1399,11 +1552,11 @@
             font-weight: 700;
             color: #1f2937;
             margin-bottom: 0.4rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .feature-text p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6b7280;
             line-height: 1.4;
         }
@@ -1411,15 +1564,15 @@
         .benefits-list {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
-            margin-bottom: 2.5rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .benefit-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.2rem;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             border-radius: 10px;
             border-left: 5px solid #0ea5e9;
@@ -1434,12 +1587,12 @@
         .benefit-item span {
             font-weight: 600;
             color: #1f2937;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .batch-info {
             background: linear-gradient(135deg, #fef3c7, #fde68a);
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 12px;
             text-align: center;
             border: 2px solid #fcd34d;
@@ -1450,23 +1603,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
             color: #92400e;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .batch-status {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #b45309;
             font-weight: 600;
         }
         
         .close-btn {
             position: absolute;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             display: flex;
@@ -1488,8 +1641,8 @@
         }
         
         .popup-close {
-            top: -20px;
-            right: -20px;
+            top: -15px;
+            right: -15px;
         }
         
         /* Hover effects for main website */
@@ -1503,24 +1656,22 @@
         
         @media (max-width: 1024px) {
             .popup-book {
-                width: 700px;
                 height: 450px;
             }
             
             .page {
-                padding: 25px;
+                padding: 20px;
             }
         }
         
         @media (max-width: 768px) {
             .popup-book {
-                width: 95vw;
-                height: 80vh;
                 flex-direction: column;
+                height: 80vh;
             }
             
             .page {
-                padding: 20px;
+                padding: 15px;
             }
             
             .left-page {
@@ -1529,45 +1680,57 @@
             }
             
             .feature-item {
-                padding: 1rem;
+                padding: 0.8rem;
             }
             
             .feature-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
-            }
-            
-            .page-title {
-                font-size: 1.5rem;
-            }
-            
-            .popup-close {
-                top: -15px;
-                right: -15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .popup-book {
-                width: 98vw;
-                height: 85vh;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
             
             .page-title {
                 font-size: 1.3rem;
             }
             
+            .popup-close {
+                top: -10px;
+                right: -10px;
+            }
+            
+            .close-btn {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .popup-book {
+                height: 85vh;
+            }
+            
+            .page-title {
+                font-size: 1.2rem;
+            }
+            
             .feature-text h5 {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .feature-text p {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
             
             .benefit-item span {
+                font-size: 0.85rem;
+            }
+            
+            .batch-badge {
                 font-size: 0.9rem;
+            }
+            
+            .batch-status {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1625,6 +1788,16 @@
                     closeBook();
                 }
             });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 
@@ -1632,69 +1805,69 @@
     <div class="digital-rain"></div>
 
     <!-- Programme Stats Section -->
-    <section class="py-16 px-6 section-accent">
+    <section class="py-12 sm:py-16 px-4 sm:px-6 section-accent">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
                     Career <span class="gradient-text">Acceleration</span> with Data Science
                 </h2>
-                <p class="text-xl text-gray-600">
+                <p class="text-lg sm:text-xl text-gray-600">
                     Unlock your potential with a VIT M.Sc. Data Science degree
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-12">
                 <!-- Career Growth Chart -->
                 <div class="stat-card" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Data Science Job Growth</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">Data Science Job Growth</h3>
                     <div class="chart-container">
                         <canvas id="careerChart"></canvas>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4">Data Science is one of the top 5 emerging jobs in India (World Economic Forum)</p>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-4">Data Science is one of the top 5 emerging jobs in India (World Economic Forum)</p>
                 </div>
                 
                 <!-- Digital Jobs Chart -->
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Data Science Skills Demand</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">Data Science Skills Demand</h3>
                     <div class="chart-container">
                         <canvas id="jobsChart"></canvas>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4">Data Science skills to create 11.5 million new jobs in India by 2026 (NASSCOM)</p>
+                    <p class="text-gray-600 text-xs sm:text-sm mt-4">Data Science skills to create 11.5 million new jobs in India by 2026 (NASSCOM)</p>
                 </div>
             </div>
             
             <!-- Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 <div class="stat-card scale-up" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-600 text-sm font-medium">Programme Duration</p>
-                            <p class="text-3xl font-bold text-purple-600 mt-2">24 Months</p>
-                            <p class="text-sm text-gray-600">Mixed Mode (Recorded + Live Sessions)</p>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Programme Duration</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-purple-600 mt-2">24 Months</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Mixed Mode (Recorded + Live Sessions)</p>
                         </div>
-                        <i class="fas fa-clock text-4xl text-purple-200"></i>
+                        <i class="fas fa-clock text-3xl sm:text-4xl text-purple-200"></i>
                     </div>
                 </div>
                 
                 <div class="stat-card scale-up" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-600 text-sm font-medium">Programme Fee</p>
-                            <p class="text-3xl font-bold text-blue-600 mt-2">₹1,70,000</p>
-                            <p class="text-sm text-gray-600">Application Fee: ₹1,200</p>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Programme Fee</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-blue-600 mt-2">₹1,70,000</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Application Fee: ₹1,200</p>
                         </div>
-                        <i class="fas fa-rupee-sign text-4xl text-blue-200"></i>
+                        <i class="fas fa-rupee-sign text-3xl sm:text-4xl text-blue-200"></i>
                     </div>
                 </div>
                 
                 <div class="stat-card scale-up" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-600 text-sm font-medium">Eligibility</p>
-                            <p class="text-3xl font-bold text-pink-600 mt-2">Graduate 50%</p>
-                            <p class="text-sm text-gray-600">Engg, Tech, Stats, Math, Computer Science</p>
+                            <p class="text-gray-600 text-xs sm:text-sm font-medium">Eligibility</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-pink-600 mt-2">Graduate 50%</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Engg, Tech, Stats, Math, Computer Science</p>
                         </div>
-                        <i class="fas fa-graduation-cap text-4xl text-pink-200"></i>
+                        <i class="fas fa-graduation-cap text-3xl sm:text-4xl text-pink-200"></i>
                     </div>
                 </div>
             </div>
@@ -1702,19 +1875,19 @@
     </section>
 
     <!-- VIT Rankings Section -->
-    <section class="py-20 px-6 relative section-light">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 relative section-light">
         <div class="max-w-7xl mx-auto">
-            <div class="cyber-card p-10 md:p-16 mb-16">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="cyber-card p-6 sm:p-8 md:p-10 lg:p-16 mb-12 sm:mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                     <div data-aos="fade-right">
-                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Learn Data Science Today for a High-growth Career</h1>
-                        <p class="text-xl mb-8 text-gray-700">The <strong class="text-purple-600">Vellore Institute of Technology (VIT)</strong> has launched the online Master of Science in Data Science degree programme. A comprehensive programme that will teach you how to analyse and interpret complex data sets, derive meaningful insights, and make data-driven decisions across various domains.</p>
-                        <p class="text-lg mb-8 text-gray-600">This programme will help you acquire and apply savvy data science skills to boost your career while alleviating bottlenecks and improving business outcomes.</p>
-                        <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-8 py-4 text-lg inline-block">
+                        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Learn Data Science Today for a High-growth Career</h1>
+                        <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-700">The <strong class="text-purple-600">Vellore Institute of Technology (VIT)</strong> has launched the online Master of Science in Data Science degree programme. A comprehensive programme that will teach you how to analyse and interpret complex data sets, derive meaningful insights, and make data-driven decisions across various domains.</p>
+                        <p class="text-base sm:text-lg mb-6 sm:mb-8 text-gray-600">This programme will help you acquire and apply savvy data science skills to boost your career while alleviating bottlenecks and improving business outcomes.</p>
+                        <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg inline-block text-center">
                             Apply for M.Sc. Data Science
                         </a>
                     </div>
-                    <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6" data-aos="fade-left">
                         <div class="ranking-card">
                             <div class="ranking-number">#14</div>
                             <div class="ranking-description">Best University, 2025 NIRF University Rankings - India</div>
@@ -1738,88 +1911,88 @@
     </section>
 
     <!-- Programme Features Section -->
-    <section class="py-20 px-6 relative overflow-hidden section-accent">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden section-accent">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                     <span class="gradient-text">Master</span> Cutting-Edge Data Science
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                     Comprehensive curriculum with 10+ electives in Big Data, ML, Business Domain Based Analytics and more
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Feature 1 -->
                 <div class="quantum-card p-1 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cyber-card p-8 h-full">
-                        <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                            <i class="fas fa-video text-2xl text-white"></i>
+                    <div class="cyber-card p-6 sm:p-8 h-full">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-md">
+                            <i class="fas fa-video text-xl sm:text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Live Online Learning</h3>
-                        <p class="text-gray-600 mb-6">Learn from VIT's distinguished faculty through live sessions along with recorded content.</p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800">Live Online Learning</h3>
+                        <p class="text-gray-600 mb-4 sm:mb-6">Learn from VIT's distinguished faculty through live sessions along with recorded content.</p>
                     </div>
                 </div>
                 
                 <!-- Feature 2 -->
                 <div class="quantum-card p-1 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cyber-card p-8 h-full">
-                        <div class="w-14 h-14 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                            <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                    <div class="cyber-card p-6 sm:p-8 h-full">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-md">
+                            <i class="fas fa-graduation-cap text-xl sm:text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Equivalent Degree</h3>
-                        <p class="text-gray-600 mb-6">Get a M.Sc Data Science degree comparable to postgraduate programmes obtained via traditional classroom training.</p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800">Equivalent Degree</h3>
+                        <p class="text-gray-600 mb-4 sm:mb-6">Get a M.Sc Data Science degree comparable to postgraduate programmes obtained via traditional classroom training.</p>
                     </div>
                 </div>
                 
                 <!-- Feature 3 -->
                 <div class="quantum-card p-1 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cyber-card p-8 h-full">
-                        <div class="w-14 h-14 bg-gradient-to-r from-blue-400 to-sky-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                            <i class="fas fa-network-wired text-2xl text-white"></i>
+                    <div class="cyber-card p-6 sm:p-8 h-full">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-blue-400 to-sky-500 rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-md">
+                            <i class="fas fa-network-wired text-xl sm:text-2xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Alumni Network</h3>
-                        <p class="text-gray-600 mb-6">Gain alumni status from Vellore Institute of Technology and access to exclusive networking opportunities.</p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800">Alumni Network</h3>
+                        <p class="text-gray-600 mb-4 sm:mb-6">Gain alumni status from Vellore Institute of Technology and access to exclusive networking opportunities.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Electives Section -->
-            <div class="mt-16" data-aos="fade-up">
-                <div class="cyber-card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-center gradient-text">Specialization Electives</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-purple-50 transition-colors shadow-sm">
-                            <i class="fas fa-database text-purple-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Big Data</p>
+            <div class="mt-12 sm:mt-16" data-aos="fade-up">
+                <div class="cyber-card p-6 sm:p-8">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center gradient-text">Specialization Electives</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-purple-50 transition-colors shadow-sm">
+                            <i class="fas fa-database text-purple-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Big Data</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-pink-50 transition-colors shadow-sm">
-                            <i class="fas fa-brain text-pink-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Machine Learning</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-pink-50 transition-colors shadow-sm">
+                            <i class="fas fa-brain text-pink-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Machine Learning</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-red-50 transition-colors shadow-sm">
-                            <i class="fas fa-chart-bar text-red-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Business Analytics</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-red-50 transition-colors shadow-sm">
+                            <i class="fas fa-chart-bar text-red-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Business Analytics</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-yellow-50 transition-colors shadow-sm">
-                            <i class="fas fa-chart-line text-yellow-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Predictive Analytics</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-yellow-50 transition-colors shadow-sm">
+                            <i class="fas fa-chart-line text-yellow-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Predictive Analytics</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-green-50 transition-colors shadow-sm">
-                            <i class="fas fa-chart-pie text-green-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Data Visualization</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-green-50 transition-colors shadow-sm">
+                            <i class="fas fa-chart-pie text-green-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Data Visualization</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-indigo-50 transition-colors shadow-sm">
-                            <i class="fas fa-cloud text-indigo-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Cloud Analytics</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-indigo-50 transition-colors shadow-sm">
+                            <i class="fas fa-cloud text-indigo-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Cloud Analytics</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors shadow-sm">
-                            <i class="fas fa-code text-blue-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">Data Engineering</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-blue-50 transition-colors shadow-sm">
+                            <i class="fas fa-code text-blue-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Data Engineering</p>
                         </div>
-                        <div class="text-center p-4 bg-white rounded-lg hover:bg-orange-50 transition-colors shadow-sm">
-                            <i class="fas fa-robot text-orange-500 text-2xl mb-2"></i>
-                            <p class="text-gray-700">AI Applications</p>
+                        <div class="text-center p-3 sm:p-4 bg-white rounded-lg hover:bg-orange-50 transition-colors shadow-sm">
+                            <i class="fas fa-robot text-orange-500 text-xl sm:text-2xl mb-2"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">AI Applications</p>
                         </div>
                     </div>
                 </div>
@@ -1831,66 +2004,66 @@
     </section>
 
     <!-- Tools Section -->
-    <section class="py-20 px-6 section-light">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 section-light">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                     Master <span class="gradient-text">Data Science Tools</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                     Gain hands-on experience with industry-standard data science tools and technologies
                 </p>
             </div>
             
-            <div class="cyber-card p-8" data-aos="fade-up">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                    <div class="text-center p-4">
-                        <i class="fab fa-python text-4xl text-purple-500 mb-3"></i>
-                        <p class="text-gray-700">Python</p>
+            <div class="cyber-card p-6 sm:p-8" data-aos="fade-up">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fab fa-python text-3xl sm:text-4xl text-purple-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Python</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fab fa-r-project text-4xl text-blue-500 mb-3"></i>
-                        <p class="text-gray-700">R Programming</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fab fa-r-project text-3xl sm:text-4xl text-blue-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">R Programming</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-code text-4xl text-indigo-500 mb-3"></i>
-                        <p class="text-gray-700">Jupyter</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-code text-3xl sm:text-4xl text-indigo-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Jupyter</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-cogs text-4xl text-gray-500 mb-3"></i>
-                        <p class="text-gray-700">Scikit-Learn</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-cogs text-3xl sm:text-4xl text-gray-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Scikit-Learn</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-database text-4xl text-green-500 mb-3"></i>
-                        <p class="text-gray-700">SQL</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-database text-3xl sm:text-4xl text-green-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">SQL</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-server text-4xl text-red-500 mb-3"></i>
-                        <p class="text-gray-700">Hadoop</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-server text-3xl sm:text-4xl text-red-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Hadoop</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-table text-4xl text-yellow-500 mb-3"></i>
-                        <p class="text-gray-700">Tableau</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-table text-3xl sm:text-4xl text-yellow-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Tableau</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-chart-bar text-4xl text-pink-500 mb-3"></i>
-                        <p class="text-gray-700">Pandas</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-chart-bar text-3xl sm:text-4xl text-pink-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Pandas</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-cloud text-4xl text-sky-400 mb-3"></i>
-                        <p class="text-gray-700">AWS</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-cloud text-3xl sm:text-4xl text-sky-400 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">AWS</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-chart-area text-4xl text-orange-500 mb-3"></i>
-                        <p class="text-gray-700">Power BI</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-chart-area text-3xl sm:text-4xl text-orange-500 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Power BI</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-code-branch text-4xl text-green-600 mb-3"></i>
-                        <p class="text-gray-700">Git</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-code-branch text-3xl sm:text-4xl text-green-600 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Git</p>
                     </div>
-                    <div class="text-center p-4">
-                        <i class="fas fa-terminal text-4xl text-gray-600 mb-3"></i>
-                        <p class="text-gray-700">Linux</p>
+                    <div class="text-center p-3 sm:p-4">
+                        <i class="fas fa-terminal text-3xl sm:text-4xl text-gray-600 mb-2 sm:mb-3"></i>
+                        <p class="text-gray-700 text-sm sm:text-base">Linux</p>
                     </div>
                 </div>
             </div>
@@ -1898,17 +2071,17 @@
     </section>
 
     <!-- Who Should Enroll Section -->
-    <section class="py-20 px-6 section-accent">
+    <section class="py-16 sm:py-20 px-4 sm:px-6 section-accent">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="relative" data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                         Who Should Choose <span class="gradient-text">This Programme</span>
                     </h2>
-                    <p class="text-xl text-gray-600 mb-8">
+                    <p class="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
                         VIT's Master of Science in Data Science programme caters early to mid-level professionals poised to take their careers to the next level.
                     </p>
-                    <ul class="space-y-4 mb-8">
+                    <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-purple-500 mr-3"></i>
                             <span class="text-gray-700">Aspiring Senior Roles and Data Science Careers</span>
@@ -1925,27 +2098,27 @@
                 </div>
                 
                 <div class="relative" data-aos="fade-left">
-                    <div class="cyber-card p-8 h-full">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-users text-6xl text-purple-500 mb-4"></i>
-                            <h3 class="text-2xl font-bold text-gray-800">Past Participant Profile</h3>
+                    <div class="cyber-card p-6 sm:p-8 h-full">
+                        <div class="text-center mb-4 sm:mb-6">
+                            <i class="fas fa-users text-4xl sm:text-5xl lg:text-6xl text-purple-500 mb-3 sm:mb-4"></i>
+                            <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Past Participant Profile</h3>
                         </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="text-center p-4">
-                                <i class="fas fa-laptop-code text-3xl text-pink-500 mb-2"></i>
-                                <p class="text-gray-700">IT/Technology</p>
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="text-center p-3 sm:p-4">
+                                <i class="fas fa-laptop-code text-2xl sm:text-3xl text-pink-500 mb-1 sm:mb-2"></i>
+                                <p class="text-gray-700 text-sm sm:text-base">IT/Technology</p>
                             </div>
-                            <div class="text-center p-4">
-                                <i class="fas fa-chart-line text-3xl text-green-500 mb-2"></i>
-                                <p class="text-gray-700">Sales</p>
+                            <div class="text-center p-3 sm:p-4">
+                                <i class="fas fa-chart-line text-2xl sm:text-3xl text-green-500 mb-1 sm:mb-2"></i>
+                                <p class="text-gray-700 text-sm sm:text-base">Sales</p>
                             </div>
-                            <div class="text-center p-4">
-                                <i class="fas fa-cogs text-3xl text-yellow-500 mb-2"></i>
-                                <p class="text-gray-700">Engineering</p>
+                            <div class="text-center p-3 sm:p-4">
+                                <i class="fas fa-cogs text-2xl sm:text-3xl text-yellow-500 mb-1 sm:mb-2"></i>
+                                <p class="text-gray-700 text-sm sm:text-base">Engineering</p>
                             </div>
-                            <div class="text-center p-4">
-                                <i class="fas fa-briefcase text-3xl text-red-500 mb-2"></i>
-                                <p class="text-gray-700">Entrepreneurship</p>
+                            <div class="text-center p-3 sm:p-4">
+                                <i class="fas fa-briefcase text-2xl sm:text-3xl text-red-500 mb-1 sm:mb-2"></i>
+                                <p class="text-gray-700 text-sm sm:text-base">Entrepreneurship</p>
                             </div>
                         </div>
                     </div>
@@ -1955,17 +2128,17 @@
     </section>
 
     <!-- Application Form Section -->
-    <section id="application" class="py-20 px-6 relative section-light">
+    <section id="application" class="py-16 sm:py-20 px-4 sm:px-6 relative section-light">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="relative" data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                         Start Your <span class="gradient-text">Data Science Journey</span>
                     </h2>
-                    <p class="text-xl text-gray-700 mb-8">
+                    <p class="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8">
                         Join thousands of professionals who have transformed their careers with VIT University Online M.Sc. Data Science Programme.
                     </p>
-                    <ul class="space-y-4 mb-8">
+                    <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-purple-500 mr-3"></i>
                             <span class="text-gray-700">UGC Entitled Data Science Degree</span>
@@ -1983,32 +2156,32 @@
                             <span class="text-gray-700">Prestigious VIT Alumni Network</span>
                         </li>
                     </ul>
-                    <div class="p-4 bg-purple-50 rounded-lg mb-8">
+                    <div class="p-3 sm:p-4 bg-purple-50 rounded-lg mb-6 sm:mb-8">
                         <div class="flex items-center">
                             <i class="fas fa-info-circle text-purple-500 mr-2"></i>
-                            <span class="text-sm text-purple-700">January 2026 Batch - Admission Open</span>
+                            <span class="text-xs sm:text-sm text-purple-700">January 2026 Batch - Admission Open</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="relative" data-aos="fade-left">
-                    <div class="cyber-card p-8 h-full">
-                        <h3 class="text-2xl font-bold mb-6 text-center gradient-text">Request Information</h3>
-                        <form class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
+                    <div class="cyber-card p-6 sm:p-8 h-full">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center gradient-text">Request Information</h3>
+                        <form class="space-y-3 sm:space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                 <input type="text" placeholder="First Name" class="cyber-input">
                                 <input type="text" placeholder="Last Name" class="cyber-input">
                             </div>
                             <div class="flex items-center">
                                 <input type="checkbox" id="no-surname" class="mr-2">
-                                <label for="no-surname" class="text-sm text-gray-600">I Don't have a Surname or Last Name</label>
+                                <label for="no-surname" class="text-xs sm:text-sm text-gray-600">I Don't have a Surname or Last Name</label>
                             </div>
                             <input type="email" placeholder="Email Address" class="cyber-input w-full">
                             <div class="flex">
-                                <select class="cyber-input rounded-r-none w-1/4">
+                                <select class="cyber-input rounded-r-none w-1/4 sm:w-1/5">
                                     <option>+91</option>
                                 </select>
-                                <input type="tel" placeholder="Mobile Number" class="cyber-input rounded-l-none w-3/4">
+                                <input type="tel" placeholder="Mobile Number" class="cyber-input rounded-l-none w-3/4 sm:w-4/5">
                             </div>
                             <select class="cyber-input w-full">
                                 <option value="">Work Experience</option>
@@ -2026,7 +2199,7 @@
                                 <option value="2020">2020 or earlier</option>
                             </select>
                             <input type="text" placeholder="City" class="cyber-input w-full">
-                            <div class="text-xs text-gray-500 mb-4">
+                            <div class="text-xs text-gray-500 mb-3 sm:mb-4">
                                 By clicking the button below, you agree to receive communications via Email/Call/WhatsApp/SMS from VIT and its associates about this programme and other relevant programmes. This will override registry on DND/NDNC.
                             </div>
                             <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button w-full text-center">
@@ -2040,68 +2213,68 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 bg-white border-t border-gray-200">
+    <footer class="py-10 sm:py-12 px-4 sm:px-6 bg-white border-t border-gray-200">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <div>
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
-                            <span class="text-white font-bold">VIT</span>
+                    <div class="flex items-center space-x-3 mb-4 sm:mb-6">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-sm sm:text-base">VIT</span>
                         </div>
-                        <span class="text-xl font-bold text-purple-700">VIT UNIVERSITY</span>
+                        <span class="text-lg sm:text-xl font-bold text-purple-700">VIT UNIVERSITY</span>
                     </div>
-                    <p class="text-gray-600 mb-6">UGC Approved Online Degree Programmes</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
-                            <i class="fab fa-twitter"></i>
+                    <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">UGC Approved Online Degree Programmes</p>
+                    <div class="flex space-x-3 sm:space-x-4">
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
+                            <i class="fab fa-twitter text-sm sm:text-base"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
+                            <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
+                            <i class="fab fa-instagram text-sm sm:text-base"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-500 hover:text-white transition-colors text-gray-600">
+                            <i class="fab fa-youtube text-sm sm:text-base"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6 text-purple-700">Programmes</h3>
-                    <ul class="space-y-3">
-                        <li><a href="mba.html" class="text-gray-600 hover:text-purple-600 transition-colors">MBA (Online)</a></li>
-                        <li><a href="mca.html" class="text-gray-600 hover:text-purple-600 transition-colors">MCA (Online)</a></li>
-                        <li><a href="msc_in_ds.html" class="text-gray-600 hover:text-purple-600 transition-colors">M.Sc. Data Science</a></li>
+                    <h3 class="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-purple-700">Programmes</h3>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="mba.html" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">MBA (Online)</a></li>
+                        <li><a href="mca.html" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">MCA (Online)</a></li>
+                        <li><a href="msc_in_ds.html" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">M.Sc. Data Science</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6 text-purple-700">Resources</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">UGC Disclosures</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">Scholarships</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">FAQ</a></li>
+                    <h3 class="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-purple-700">Resources</h3>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">UGC Disclosures</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">Scholarships</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-purple-600 transition-colors text-sm sm:text-base">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6 text-purple-700">Contact</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-purple-700">Contact</h3>
+                    <ul class="space-y-2 sm:space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-purple-500 mr-3"></i>
-                            <span class="text-gray-600">info@vit.ac.in</span>
+                            <i class="fas fa-envelope text-purple-500 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                            <span class="text-gray-600 text-sm sm:text-base">info@vit.ac.in</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone text-purple-500 mr-3"></i>
-                            <span class="text-gray-600">+91 44 1234 5678</span>
+                            <i class="fas fa-phone text-purple-500 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                            <span class="text-gray-600 text-sm sm:text-base">+91 44 1234 5678</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
-                <p class="text-gray-500">© 2025 VIT University. All rights reserved. | UGC Approved Programmes</p>
+            <div class="border-t border-gray-200 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+                <p class="text-gray-500 text-xs sm:text-sm">© 2025 VIT University. All rights reserved. | UGC Approved Programmes</p>
             </div>
         </div>
     </footer>

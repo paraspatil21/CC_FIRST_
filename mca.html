@@ -685,6 +685,244 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #db2777, #7c3aed);
         }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .header-gradient .max-w-7xl {
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 50px;
+            }
+            
+            .header-gradient .hidden {
+                display: none;
+            }
+            
+            .header-gradient .flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header-gradient .px-5 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Hero Section */
+            #heroSection {
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+            }
+            
+            #heroSection h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            #heroSection p {
+                font-size: 1.1rem;
+            }
+            
+            #heroSection .flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            #heroSection .cyber-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            /* Book Container */
+            .book-container {
+                width: 250px;
+                height: 350px;
+            }
+            
+            /* Stats Section */
+            .chart-container {
+                height: 250px;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+            
+            .stat-card .text-3xl {
+                font-size: 1.75rem;
+            }
+            
+            /* Rankings Section */
+            .ranking-card {
+                padding: 1rem;
+            }
+            
+            .ranking-number {
+                font-size: 2rem;
+            }
+            
+            /* Features Section */
+            .quantum-card .cyber-card {
+                padding: 1.5rem;
+            }
+            
+            .quantum-card .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .features-grid .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Tools Section */
+            .tools-grid .grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .tools-grid .text-center {
+                padding: 0.5rem;
+            }
+            
+            .tools-grid .text-4xl {
+                font-size: 2rem;
+            }
+            
+            /* V-PROPEL Section */
+            .v-propel .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Application Form */
+            #application .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #application form .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #application .flex {
+                flex-direction: column;
+            }
+            
+            #application .cyber-input {
+                width: 100%;
+            }
+            
+            /* Footer */
+            footer .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            footer .flex {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Hero Section */
+            #heroSection h1 {
+                font-size: 2rem;
+            }
+            
+            #heroSection p {
+                font-size: 1rem;
+            }
+            
+            /* Book Container */
+            .book-container {
+                width: 200px;
+                height: 280px;
+            }
+            
+            /* Stats Section */
+            .stat-card .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .stat-card .text-4xl {
+                font-size: 2rem;
+            }
+            
+            /* Rankings Section */
+            .ranking-card {
+                padding: 0.75rem;
+            }
+            
+            .ranking-number {
+                font-size: 1.75rem;
+            }
+            
+            .ranking-description {
+                font-size: 0.8rem;
+            }
+            
+            /* Features Section */
+            .quantum-card .cyber-card {
+                padding: 1rem;
+            }
+            
+            .quantum-card .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            /* Tools Section */
+            .tools-grid .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tools-grid .text-4xl {
+                font-size: 1.75rem;
+            }
+            
+            /* Application Form */
+            #application .cyber-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Tablet Styles */
+            .header-gradient .max-w-7xl {
+                padding: 0 2rem;
+            }
+            
+            /* Hero Section */
+            #heroSection h1 {
+                font-size: 3.5rem;
+            }
+            
+            /* Book Container */
+            .book-container {
+                width: 280px;
+                height: 370px;
+            }
+            
+            /* Stats Section */
+            .stat-card .text-3xl {
+                font-size: 2rem;
+            }
+            
+            /* Features Section */
+            .features-grid .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Tools Section */
+            .tools-grid .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            /* Application Form */
+            #application .grid {
+                gap: 2rem;
+            }
+        }
     </style>
 </head>
 <body class="futuristic-bg">
@@ -950,6 +1188,33 @@
             .book-container {
                 width: 260px;
                 height: 340px;
+            }
+            
+            .mca-icon {
+                font-size: 2.5rem;
+            }
+            
+            .hint-text {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+                bottom: -40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .book-container {
+                width: 220px;
+                height: 300px;
+            }
+            
+            .mca-icon {
+                font-size: 2rem;
+            }
+            
+            .hint-text {
+                font-size: 0.7rem;
+                padding: 5px 10px;
+                bottom: -35px;
             }
         }
     </style>
@@ -1841,7 +2106,7 @@
             </div>
             
             <div class="cyber-card p-8" data-aos="fade-up">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="tools-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     <div class="text-center p-4">
                         <i class="fab fa-python text-4xl text-purple-500 mb-3"></i>
                         <p class="text-gray-700">Python</p>
@@ -1896,7 +2161,7 @@
     </section>
 
     <!-- V-PROPEL Section -->
-    <section class="py-20 px-6 section-accent">
+    <section class="py-20 px-6 section-accent v-propel">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="relative" data-aos="fade-right">
@@ -1997,7 +2262,7 @@
                     <div class="cyber-card p-8 h-full">
                         <h3 class="text-2xl font-bold mb-6 text-center gradient-text">Request Information</h3>
                         <form class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <input type="text" placeholder="First Name" class="cyber-input">
                                 <input type="text" placeholder="Last Name" class="cyber-input">
                             </div>
