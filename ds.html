@@ -1508,6 +1508,108 @@
             color: white;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #1e3a8a;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .modal-form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .modal-form-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .modal-form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .modal-submit-button {
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .modal-submit-button:hover {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
         /* Responsive Styles */
         @media (max-width: 1024px) {
             .book-container {
@@ -2231,6 +2333,48 @@
     <!-- Morphing Grid Background -->
     <div class="morphing-grid"></div>
     
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Apply for M.Sc Data Science Programme</h2>
+            <form class="modal-form">
+                <div class="modal-form-group">
+                    <label for="modalFirstName">First Name</label>
+                    <input type="text" id="modalFirstName" class="modal-form-input" placeholder="First Name" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="modalLastName">Last Name</label>
+                    <input type="text" id="modalLastName" class="modal-form-input" placeholder="Last Name" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="modalEmail">Email</label>
+                    <input type="email" id="modalEmail" class="modal-form-input" placeholder="Email" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="modalPhone">Mobile Number</label>
+                    <input type="tel" id="modalPhone" class="modal-form-input" placeholder="Phone" required>
+                </div>
+                
+                <div class="modal-form-group">
+                    <label for="modalExperience">Work Experience</label>
+                    <select id="modalExperience" class="modal-form-input">
+                        <option value="">Select Work Experience</option>
+                        <option value="0-2">0-2 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="modal-submit-button">Submit Application</button>
+            </form>
+        </div>
+    </div>
+    
     <!-- Header Section with Integrated Logo -->
     <header class="header-gradient text-white py-4 px-6 shadow-lg">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -2261,9 +2405,9 @@
             </div>
             
             <!-- CTA Button -->
-            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105 hidden md:block">
+            <button id="headerApplyNow" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105 hidden md:block">
                 Apply Now
-            </a>
+            </button>
         </div>
         
         <!-- Mobile Menu Dropdown -->
@@ -2273,9 +2417,9 @@
                 <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
                 <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors"></a>
                 <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
-                <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all text-center">
+                <button id="mobileApplyNow" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all text-center">
                     Apply Now
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -2307,9 +2451,9 @@
                         </div>
                     </div>
                     
-                    <a href="#specializations" class="cyber-button inline-block">
+                    <button id="exploreSpecializations" class="cyber-button inline-block">
                         <i class="fas fa-book-open mr-2"></i> Explore Specializations
-                    </a>
+                    </button>
                 </div>
                 
                 <div class="hero-form">
@@ -2392,9 +2536,9 @@
                         </p>
                         
                         <!-- Updated button to directly download PDF -->
-                        <a href="https://drive.google.com/uc?export=download&id=19pBqYggpIoL7i0RmiEEScxCh7VtRqK6b" class="form-button" style="display: block; text-align: center; text-decoration: none;">
+                        <button type="button" id="getBrochure" class="form-button">
                             Get Brochure
-                        </a>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -2412,19 +2556,8 @@
             <div class="salary-chart-container mt-12" data-aos="fade-up">
                 <h3 class="text-2xl font-bold mb-8 text-center text-indigo-800">Average Annual Salary in India</h3>
                 
-                <div class="salary-bar" style="width: 30%">
-                    <span class="salary-label">Associate Analyst</span>
-                    <span class="salary-amount">₹5.4 LPA</span>
-                </div>
-                
-                <div class="salary-bar" style="width: 50%">
-                    <span class="salary-label">Analytics Consultant</span>
-                    <span class="salary-amount">₹9.1 LPA</span>
-                </div>
-                
-                <div class="salary-bar" style="width: 100%">
-                    <span class="salary-label">Machine Learning Engineer</span>
-                    <span class="salary-amount">₹19.4 LPA</span>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="salaryChart"></canvas>
                 </div>
                 
                 <div class="mt-8 text-center">
@@ -2447,9 +2580,9 @@
                     <h3 class="text-3xl font-bold mb-6">Elevate Your Career with VIT's M.Sc Data Science</h3>
                     <p class="text-lg mb-6 text-gray-700">The <strong class="text-indigo-600">Vellore Institute of Technology (VIT)</strong> has launched the online Master of Science in Data Science degree programme. A comprehensive programme that will teach you how to analyse and interpret complex data sets, derive meaningful insights, and make data-driven decisions across various domains.</p>
                     <p class="text-lg mb-8 text-gray-600">This programme will help you acquire and apply savvy data science skills to boost your career while alleviating bottlenecks and improving business outcomes.</p>
-                    <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-8 py-4 text-lg inline-block">
+                    <button id="applyForMSc" class="cyber-button px-8 py-4 text-lg inline-block">
                         Apply for M.Sc Data Science Programme
-                    </a>
+                    </button>
                 </div>
                 
                 <div class="combined-right" data-aos="fade-left">
@@ -3451,9 +3584,9 @@
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Early registrations are encouraged. Seats fill up quickly!</h2>
             <p class="text-xl text-gray-600 mb-8">Orientation Date: To Be Announced</p>
-            <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-8 py-4 text-lg inline-block">
+            <button id="startApplicationNow" class="cyber-button px-8 py-4 text-lg inline-block">
                 START APPLICATION NOW
-            </a>
+            </button>
             <div class="mt-6">
                 <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">UGC/AICTE Mandatory Disclosures. Click Here</a>
             </div>
@@ -3572,6 +3705,69 @@
             }
         });
         
+        // Salary Chart
+        const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+        const salaryChart = new Chart(salaryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Associate Analyst', 'Analytics Consultant', 'Machine Learning Engineer'],
+                datasets: [{
+                    label: 'Average Annual Salary (LPA)',
+                    data: [5.4, 9.1, 19.4],
+                    backgroundColor: [
+                        'rgba(102, 126, 234, 0.8)',
+                        'rgba(167, 139, 250, 0.8)',
+                        'rgba(79, 70, 229, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(102, 126, 234, 1)',
+                        'rgba(167, 139, 250, 1)',
+                        'rgba(79, 70, 229, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Salary (LPA)'
+                        },
+                        ticks: {
+                            color: '#475569',
+                            callback: function(value) {
+                                return '₹' + value + ' LPA';
+                            }
+                        },
+                        grid: { color: 'rgba(203, 213, 225, 0.3)' }
+                    },
+                    x: {
+                        ticks: { 
+                            color: '#475569',
+                            font: { size: 14 }
+                        },
+                        grid: { color: 'rgba(203, 213, 225, 0.1)' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Salary: ₹${context.raw} LPA`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
         // Work Experience Chart
         const workExpCtx = document.getElementById('workExperienceChart').getContext('2d');
         const workExpChart = new Chart(workExpCtx, {
@@ -3712,6 +3908,50 @@
             card.addEventListener('click', function() {
                 this.classList.toggle('flipped');
             });
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('applicationModal');
+        const closeModal = document.querySelector('.close-modal');
+        const headerApplyNow = document.getElementById('headerApplyNow');
+        const mobileApplyNow = document.getElementById('mobileApplyNow');
+        const getBrochure = document.getElementById('getBrochure');
+        const applyForMSc = document.getElementById('applyForMSc');
+        const startApplicationNow = document.getElementById('startApplicationNow');
+        
+        // Function to open modal
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        // Function to close modal
+        function closeModalFunc() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Event listeners for modal
+        if (headerApplyNow) headerApplyNow.addEventListener('click', openModal);
+        if (mobileApplyNow) mobileApplyNow.addEventListener('click', openModal);
+        if (getBrochure) getBrochure.addEventListener('click', openModal);
+        if (applyForMSc) applyForMSc.addEventListener('click', openModal);
+        if (startApplicationNow) startApplicationNow.addEventListener('click', openModal);
+        
+        if (closeModal) closeModal.addEventListener('click', closeModalFunc);
+        
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModalFunc();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'flex') {
+                closeModalFunc();
+            }
         });
     </script>
 </body>
