@@ -32,6 +32,160 @@
             overflow-x: hidden;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #374151;
+        }
+        
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .phone-input-group {
+            display: flex;
+        }
+        
+        .country-code {
+            width: 30%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+        }
+        
+        .phone-number {
+            width: 70%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .no-surname {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .no-surname input {
+            width: auto;
+        }
+        
+        .no-surname label {
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 0.875rem;
+        }
+        
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 1rem;
+            line-height: 1.4;
+        }
+        
+        .modal-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .modal-button:hover {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
         /* Header Styles */
         .header-gradient {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -1797,6 +1951,95 @@
     </style>
 </head>
 <body class="futuristic-bg">
+    <!-- Modal Popup -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Apply for MBA Programme</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="modalFirstName" class="form-label">First Name</label>
+                    <input type="text" id="modalFirstName" class="form-input" placeholder="First Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalLastName" class="form-label">Last Name</label>
+                    <input type="text" id="modalLastName" class="form-input" placeholder="Last Name" required>
+                    <div class="no-surname">
+                        <input type="checkbox" id="modalNoSurname">
+                        <label for="modalNoSurname">I Don't have a Surname or Last Name</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalEmail" class="form-label">Email</label>
+                    <input type="email" id="modalEmail" class="form-input" placeholder="Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalCountry" class="form-label">Country</label>
+                    <select id="modalCountry" class="form-input">
+                        <option>India</option>
+                        <option>United States</option>
+                        <option>United Kingdom</option>
+                        <option>Canada</option>
+                        <option>Australia</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalPhone" class="form-label">Mobile Number</label>
+                    <div class="phone-input-group">
+                        <select class="form-input country-code">
+                            <option>+91</option>
+                            <option>+1</option>
+                            <option>+44</option>
+                        </select>
+                        <input type="tel" id="modalPhone" class="form-input phone-number" placeholder="Phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalExperience" class="form-label">Work Experience</label>
+                    <select id="modalExperience" class="form-input">
+                        <option value="">Select Work Experience</option>
+                        <option value="0-2">0-2 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalGraduation" class="form-label">Graduation Year/Expected Graduation Year</label>
+                    <select id="modalGraduation" class="form-input">
+                        <option value="">Select Graduation Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019 or earlier</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalCity" class="form-label">City</label>
+                    <input type="text" id="modalCity" class="form-input" placeholder="City" required>
+                </div>
+                
+                <p class="form-disclaimer">
+                    By clicking the button below, you agree to receive communications via Email/Call/WhatsApp/SMS from VIT and its associates about this programme and other relevant programmes. This will override registry on DND/NDNC.
+                </p>
+                
+                <button type="submit" class="modal-button">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Particle Background -->
     <div id="particles-js" class="particle-bg"></div>
     
@@ -1833,9 +2076,9 @@
             </div>
             
             <!-- CTA Button -->
-            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105 hidden md:block">
+            <button id="headerApplyNow" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105 hidden md:block">
                 Apply Now
-            </a>
+            </button>
         </div>
         
         <!-- Mobile Menu Dropdown -->
@@ -1845,9 +2088,9 @@
                 <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
                 <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors"></a>
                 <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors"> </a>
-                <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all text-center">
+                <button id="mobileApplyNow" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all text-center">
                     Apply Now
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -1879,9 +2122,9 @@
                         </div>
                     </div>
                     
-                    <a href="#specializations" class="cyber-button inline-block">
+                    <button id="exploreSpecializations" class="cyber-button inline-block">
                         <i class="fas fa-book-open mr-2"></i> Explore Specializations
-                    </a>
+                    </button>
                 </div>
                 
                 <div class="hero-form">
@@ -1964,9 +2207,9 @@
                         </p>
                         
                         <!-- Updated button to directly download PDF -->
-                        <a href="https://drive.google.com/uc?export=download&id=19pBqYggpIoL7i0RmiEEScxCh7VtRqK6b" class="form-button" style="display: block; text-align: center; text-decoration: none;">
+                        <button id="getBrochure" class="form-button">
                             Get Brochure
-                        </a>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1986,9 +2229,9 @@
                     <h3 class="text-3xl font-bold mb-6">Accelerate Your Leadership Journey with VIT's MBA</h3>
                     <p class="text-lg mb-6 text-gray-700">The <strong class="text-indigo-600">Vellore Institute of Technology (VIT)</strong> offers a 2-year online Master of Business Administration (MBA) Programme that provides a transformative educational experience to empower your professional journey.</p>
                     <p class="text-lg mb-8 text-gray-600">A Program designed to expand your business knowledge, enhance your leadership impact, drive innovation, make bold decisions, and seize growth opportunities.</p>
-                    <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-8 py-4 text-lg inline-block">
+                    <button id="applyForMBA" class="cyber-button px-8 py-4 text-lg inline-block">
                         Apply for MBA Programme
-                    </a>
+                    </button>
                 </div>
                 
                 <div class="combined-right" data-aos="fade-left">
@@ -3224,9 +3467,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Early registrations are encouraged. Seats fill up quickly!</h2>
             <p class="text-xl text-gray-600 mb-8">Orientation Date: To Be Announced</p>
-            <a href="https://forms.gle/YTGy2nr6CyK8XmvX8" target="_blank" class="cyber-button px-8 py-4 text-lg inline-block">
+            <button id="startApplicationNow" class="cyber-button px-8 py-4 text-lg inline-block">
                 START APPLICATION NOW
-            </a>
+            </button>
         </div>
     </section>
 
@@ -3299,6 +3542,47 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
     <script>
+        // Modal Functionality
+        const modal = document.getElementById('applicationModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalForm = document.querySelector('.modal-form');
+        
+        // Function to open modal
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        // Function to close modal
+        function closeModalFunc() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Event listeners for modal buttons
+        document.getElementById('headerApplyNow').addEventListener('click', openModal);
+        document.getElementById('mobileApplyNow').addEventListener('click', openModal);
+        document.getElementById('exploreSpecializations').addEventListener('click', openModal);
+        document.getElementById('getBrochure').addEventListener('click', openModal);
+        document.getElementById('applyForMBA').addEventListener('click', openModal);
+        document.getElementById('startApplicationNow').addEventListener('click', openModal);
+        
+        // Close modal when clicking X or outside modal
+        closeModal.addEventListener('click', closeModalFunc);
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModalFunc();
+            }
+        });
+        
+        // Form submission
+        modalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Thank you for your application! We will contact you soon.');
+            closeModalFunc();
+        });
+        
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 1000,
