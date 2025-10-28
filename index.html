@@ -392,6 +392,242 @@
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: translateY(30px);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .modal-close:hover {
+            color: #1e293b;
+        }
+        
+        .modal-body {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .modal-form input:focus,
+        .modal-form select:focus,
+        .modal-form textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .modal-btn-primary {
+            background: #3b82f6;
+            color: white;
+            border: none;
+        }
+        
+        .modal-btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .modal-btn-secondary {
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px solid #cbd5e1;
+        }
+        
+        .modal-btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .modal-success {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .modal-success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-success-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-success-message {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Updated styles for program cards */
+        .program-card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .program-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-card-body {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .program-card-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-card-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .program-card-duration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .program-card-footer {
+            margin-top: auto;
+        }
+        
+        /* Updated styles for accreditation badges */
+        .accreditation-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .accreditation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .accreditation-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+        
+        .accreditation-content {
+            flex-grow: 1;
+        }
+        
+        .accreditation-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .accreditation-description {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -418,18 +654,10 @@
                 </div>
             </div>
             
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#" class="font-medium hover:text-blue-200 transition-colors">Home</a>
-                <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors">About VIT</a>
-                <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors">Academics</a>
-                <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors">Degree Programmes</a>
-            </nav>
-            
             <!-- CTA Button -->
-            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105">
+            <button class="modal-trigger px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105" data-modal="apply-modal">
                 Apply Now
-            </a>
+            </button>
         </div>
     </header>
 
@@ -442,9 +670,9 @@
                 <div class="carousel-caption">
                     <h2 class="text-3xl font-bold mb-2">Build Your Professional Career with an MBA from VIT Online</h2>
                     <p class="text-lg">Admissions Open Now</p>
-                    <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="mt-4 px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block">
+                    <button class="modal-trigger mt-4 px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block" data-modal="enquire-modal">
                         Enquire Now
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -459,9 +687,9 @@
                         <h1 class="text-4xl md:text-5xl font-bold mb-6">Accelerate Your Leadership Journey with VIT's MBA</h1>
                         <p class="text-xl mb-8 text-blue-100">The <strong>Vellore Institute of Technology (VIT)</strong> launches its 2-year <strong>online Master of Business Administration (MBA) Programme</strong>, that provides a transformative educational experience to empower your professional journey.</p>
                         <p class="text-lg mb-8 text-blue-100">A Program designed to expand your business knowledge, enhance your leadership impact, drive innovation, make bold decisions, and seize growth opportunities.</p>
-                        <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-8 py-4 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-xl transition-all hover:scale-105 inline-block">
+                        <button class="modal-trigger px-8 py-4 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-xl transition-all hover:scale-105 inline-block" data-modal="mba-modal">
                             Apply for MBA Programme
-                        </a>
+                        </button>
                     </div>
                     <div class="grid grid-cols-2 gap-6 slide-in-right">
                         <div class="ranking-card">
@@ -497,96 +725,114 @@
                 <p class="text-xl text-gray-600 mb-10 animate-in" style="animation-delay: 0.3s">
                     Move Up In Your Career with VIT University Online Programmes
                 </p>
-                <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all bounce-in hover:scale-105 inline-block" style="animation-delay: 0.5s">
+                <button class="modal-trigger px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all bounce-in hover:scale-105 inline-block" style="animation-delay: 0.5s" data-modal="explore-modal">
                     Explore Programmes
-                </a>
+                </button>
             </div>
             
             <!-- Program Cards - Now Square and Centered -->
             <div class="flex justify-center mb-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
                     <!-- MBA Card -->
-                    <div class="rounded-2xl p-8 shadow-2xl card-hover card-gradient-1 text-white floating square-card" style="animation-delay: 0.1s">
-                        <div class="flex justify-between items-start">
-                            <div class="icon-bg rounded-xl p-3">
-                                <i class="fas fa-chart-line text-2xl"></i>
+                    <div class="rounded-2xl p-6 shadow-2xl card-hover card-gradient-1 text-white floating square-card" style="animation-delay: 0.1s">
+                        <div class="program-card-content">
+                            <div class="program-card-header">
+                                <div class="icon-bg rounded-xl p-3">
+                                    <i class="fas fa-chart-line text-2xl"></i>
+                                </div>
+                                <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC & AICTE Approved</span>
                             </div>
-                            <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC & AICTE Approved</span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-3xl font-bold mb-4">MBA</h3>
-                            <p class="mb-6 text-blue-100">Master of Business Administration</p>
-                            <div class="flex items-center justify-center mb-6">
-                                <i class="far fa-clock mr-2"></i>
-                                <span>Duration: 24 Months</span>
+                            <div class="program-card-body">
+                                <h3 class="program-card-title">MBA</h3>
+                                <p class="program-card-subtitle">Master of Business Administration</p>
+                                <div class="program-card-duration">
+                                    <i class="far fa-clock mr-2"></i>
+                                    <span>Duration: 24 Months</span>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <button class="modal-trigger w-full py-3 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center" data-modal="mba-modal">
+                                    Know More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
                             </div>
                         </div>
-                        <a href="mba3.html" class="w-full py-3 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
-                            Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
                     </div>
                     
                     <!-- MCA Card -->
-                    <div class="rounded-2xl p-8 shadow-2xl card-hover card-gradient-2 text-white floating square-card" style="animation-delay: 0.3s">
-                        <div class="flex justify-between items-start">
-                            <div class="icon-bg rounded-xl p-3">
-                                <i class="fas fa-laptop-code text-2xl"></i>
+                    <div class="rounded-2xl p-6 shadow-2xl card-hover card-gradient-2 text-white floating square-card" style="animation-delay: 0.3s">
+                        <div class="program-card-content">
+                            <div class="program-card-header">
+                                <div class="icon-bg rounded-xl p-3">
+                                    <i class="fas fa-laptop-code text-2xl"></i>
+                                </div>
+                                <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC & AICTE Approved</span>
                             </div>
-                            <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC & AICTE Approved</span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-3xl font-bold mb-4">MCA</h3>
-                            <p class="mb-6 text-teal-100">Master of Computer Applications</p>
-                            <div class="flex items-center justify-center mb-6">
-                                <i class="far fa-clock mr-2"></i>
-                                <span>Duration: 24 Months</span>
+                            <div class="program-card-body">
+                                <h3 class="program-card-title">MCA</h3>
+                                <p class="program-card-subtitle">Master of Computer Applications</p>
+                                <div class="program-card-duration">
+                                    <i class="far fa-clock mr-2"></i>
+                                    <span>Duration: 24 Months</span>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <button class="modal-trigger w-full py-3 bg-white text-teal-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center" data-modal="mca-modal">
+                                    Know More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
                             </div>
                         </div>
-                        <a href="mca.html" class="w-full py-3 bg-white text-teal-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
-                            Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
                     </div>
                     
                     <!-- M.Sc. Data Science Card -->
-                    <div class="rounded-2xl p-8 shadow-2xl card-hover card-gradient-3 text-white floating square-card" style="animation-delay: 0.5s">
-                        <div class="flex justify-between items-start">
-                            <div class="icon-bg rounded-xl p-3">
-                                <i class="fas fa-database text-2xl"></i>
+                    <div class="rounded-2xl p-6 shadow-2xl card-hover card-gradient-3 text-white floating square-card" style="animation-delay: 0.5s">
+                        <div class="program-card-content">
+                            <div class="program-card-header">
+                                <div class="icon-bg rounded-xl p-3">
+                                    <i class="fas fa-database text-2xl"></i>
+                                </div>
+                                <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC Approved</span>
                             </div>
-                            <span class="glass-effect px-3 py-1 rounded-full text-sm font-medium">UGC Approved</span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-3xl font-bold mb-4">M.Sc. DS</h3>
-                            <p class="mb-6 text-purple-100">Master of Science in Data Science</p>
-                            <div class="flex items-center justify-center mb-6">
-                                <i class="far fa-clock mr-2"></i>
-                                <span>Duration: 24 Months</span>
+                            <div class="program-card-body">
+                                <h3 class="program-card-title">M.Sc. DS</h3>
+                                <p class="program-card-subtitle">Master of Science in Data Science</p>
+                                <div class="program-card-duration">
+                                    <i class="far fa-clock mr-2"></i>
+                                    <span>Duration: 24 Months</span>
+                                </div>
+                            </div>
+                            <div class="program-card-footer">
+                                <button class="modal-trigger w-full py-3 bg-white text-purple-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center" data-modal="ds-modal">
+                                    Know More <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
                             </div>
                         </div>
-                        <a href="ds.html" class="w-full py-3 bg-white text-purple-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
-                            Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
                     </div>
                 </div>
             </div>
             
             <!-- Accreditation Badges -->
             <div class="flex justify-center mb-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
-                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
-                        <i class="fas fa-university text-4xl text-blue-600 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">UGC Entitled</h3>
-                        <p class="text-gray-600">Recognized by University Grants Commission</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
+                    <div class="accreditation-card">
+                        <i class="fas fa-university accreditation-icon text-blue-600"></i>
+                        <div class="accreditation-content">
+                            <h3 class="accreditation-title">UGC Entitled</h3>
+                            <p class="accreditation-description">Recognized by University Grants Commission</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
-                        <i class="fas fa-award text-4xl text-green-600 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">NAAC A++</h3>
-                        <p class="text-gray-600">Highest accreditation grade</p>
+                    <div class="accreditation-card">
+                        <i class="fas fa-award accreditation-icon text-green-600"></i>
+                        <div class="accreditation-content">
+                            <h3 class="accreditation-title">NAAC A++</h3>
+                            <p class="accreditation-description">Highest accreditation grade</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
-                        <i class="fas fa-check-circle text-4xl text-purple-600 mb-4"></i>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">AICTE Approved</h3>
-                        <p class="text-gray-600">Approved by All India Council for Technical Education</p>
+                    <div class="accreditation-card">
+                        <i class="fas fa-check-circle accreditation-icon text-purple-600"></i>
+                        <div class="accreditation-content">
+                            <h3 class="accreditation-title">AICTE Approved</h3>
+                            <p class="accreditation-description">Approved by All India Council for Technical Education</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -631,9 +877,9 @@
                                 <option value="mca">MCA</option>
                                 <option value="msds">MS in Data Science</option>
                             </select>
-                            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
+                            <button class="modal-trigger w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center" data-modal="submit-modal">
                                 Submit Application
-                            </a>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -666,9 +912,9 @@
                         <p class="text-lg mb-6 text-blue-100">
                             The campus has a cosmopolitan atmosphere with students from all corners of the globe.
                         </p>
-                        <a href="about VIT.html" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block">
+                        <button class="modal-trigger px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block" data-modal="info-modal">
                             Click here for more information
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -723,7 +969,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-gray-600 text-sm font-medium">Active Programmes</p>
-                            <p class="text-3xl font-bold text-green-600 mt-2">3</p>
+                            <p class="text-3xl font-bold text-green-600 mt-2" id="activeProgrammes">0</p>
                         </div>
                         <i class="fas fa-book text-4xl text-green-200"></i>
                     </div>
@@ -742,8 +988,8 @@
                 <div class="stat-card scale-up" style="animation-delay: 0.4s">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-gray-600 text-sm font-medium">Avg. Rating</p>
-                            <p class="text-3xl font-bold text-yellow-600 mt-2">4.8/5</p>
+                            <p class="text-gray-600 text-sm font-medium">Almost Avg. Rating</p>
+                            <p class="text-3xl font-bold text-yellow-600 mt-2" id="avgRating">0/5</p>
                         </div>
                         <i class="fas fa-star text-4xl text-yellow-200"></i>
                     </div>
@@ -826,7 +1072,7 @@
                             <i class="far fa-clock text-amber-600 mr-2"></i>
                             <span class="text-gray-600">Duration: 16 weeks</span>
                         </div>
-                        <button class="px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors">
+                        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="certificate-modal">
                             Know More
                         </button>
                     </div>
@@ -837,7 +1083,7 @@
                             <i class="far fa-clock text-amber-600 mr-2"></i>
                             <span class="text-gray-600">Duration: 16 Weeks</span>
                         </div>
-                        <button class="px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors">
+                        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="certificate-modal">
                             Know More
                         </button>
                     </div>
@@ -896,9 +1142,9 @@
                     <div class="bg-white rounded-xl p-6 shadow-md">
                         <h3 class="text-xl font-bold mb-4 text-gray-800">Ready to advance your career?</h3>
                         <p class="text-gray-600 mb-4">Join thousands of professionals who have transformed their careers with VIT University Online Programmes.</p>
-                        <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
+                        <button class="modal-trigger w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center" data-modal="apply-modal">
                             Apply Now
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -991,9 +1237,9 @@
                             <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
+                            <button class="modal-trigger w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center" data-modal="message-modal">
                                 Send Message
-                            </a>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -1037,110 +1283,489 @@
         </div>
     </footer>
 
+    <!-- Modal Structure -->
+    <div class="modal" id="apply-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Apply Now</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your interest in VIT University Online Programmes. Please fill out the application form below.</p>
+                <form class="modal-form mt-4">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Programme</option>
+                        <option value="mba">MBA</option>
+                        <option value="mca">MCA</option>
+                        <option value="msds">M.Sc. Data Science</option>
+                    </select>
+                    <textarea placeholder="Additional Information (Optional)" rows="3"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Cancel</button>
+                <button class="modal-btn modal-btn-primary">Submit Application</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="enquire-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Enquire Now</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please provide your details and we'll get back to you with more information about our programmes.</p>
+                <form class="modal-form mt-4">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Programme of Interest</option>
+                        <option value="mba">MBA</option>
+                        <option value="mca">MCA</option>
+                        <option value="msds">M.Sc. Data Science</option>
+                    </select>
+                    <textarea placeholder="Your Questions or Comments" rows="3" required></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Cancel</button>
+                <button class="modal-btn modal-btn-primary">Submit Enquiry</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="mba-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">MBA Programme Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Master of Business Administration (MBA)</strong></p>
+                <p>Duration: 24 Months</p>
+                <p>Our MBA programme is designed to provide a comprehensive business education with a focus on leadership, strategic thinking, and practical skills.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>UGC & AICTE Approved</li>
+                    <li>Flexible online learning</li>
+                    <li>Industry-relevant curriculum</li>
+                    <li>Expert faculty guidance</li>
+                    <li>Placement assistance</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="mca-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">MCA Programme Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Master of Computer Applications (MCA)</strong></p>
+                <p>Duration: 24 Months</p>
+                <p>Our MCA programme provides in-depth knowledge of computer applications, programming, and software development.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>UGC & AICTE Approved</li>
+                    <li>Comprehensive IT curriculum</li>
+                    <li>Hands-on programming experience</li>
+                    <li>Industry projects</li>
+                    <li>Career support services</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="ds-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">M.Sc. Data Science Programme Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Master of Science in Data Science</strong></p>
+                <p>Duration: 24 Months</p>
+                <p>Our M.Sc. Data Science programme equips students with the skills to analyze, interpret, and leverage data for strategic decision-making.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>UGC Approved</li>
+                    <li>Cutting-edge data science curriculum</li>
+                    <li>Practical data analysis projects</li>
+                    <li>Machine learning and AI applications</li>
+                    <li>Industry mentorship</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="explore-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Explore Programmes</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Discover our range of online degree programmes designed for working professionals and aspiring learners.</p>
+                <div class="space-y-4 mt-4">
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg">MBA</h4>
+                        <p class="text-gray-600">Master of Business Administration</p>
+                        <p class="text-sm mt-2">Duration: 24 Months | UGC & AICTE Approved</p>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg">MCA</h4>
+                        <p class="text-gray-600">Master of Computer Applications</p>
+                        <p class="text-sm mt-2">Duration: 24 Months | UGC & AICTE Approved</p>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg">M.Sc. Data Science</h4>
+                        <p class="text-gray-600">Master of Science in Data Science</p>
+                        <p class="text-sm mt-2">Duration: 24 Months | UGC Approved</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Request More Info</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="submit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Submit Application</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please review your information before submitting your application.</p>
+                <form class="modal-form mt-4">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Programme</option>
+                        <option value="mba">MBA</option>
+                        <option value="mca">MCA</option>
+                        <option value="msds">M.Sc. Data Science</option>
+                    </select>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="agree" required>
+                        <label for="agree" class="ml-2 text-sm">I agree to the terms and conditions</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Cancel</button>
+                <button class="modal-btn modal-btn-primary">Submit Application</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="info-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">About VIT</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Vellore Institute of Technology (VIT) is one of India's premier higher education institutions.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>Established in 1984</li>
+                    <li>NAAC A++ Accreditation</li>
+                    <li>Ranked among top universities in India</li>
+                    <li>Global recognition and partnerships</li>
+                    <li>State-of-the-art infrastructure</li>
+                    <li>Experienced faculty members</li>
+                </ul>
+                <p class="mt-4">VIT Online Learning brings the same quality education to students worldwide through flexible online programmes.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="certificate-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Certificate Programmes</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Our certificate programmes are designed to provide specialized skills in high-demand areas.</p>
+                <div class="space-y-4 mt-4">
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg">Data Science and AI Programme</h4>
+                        <p class="text-gray-600">Duration: 16 weeks</p>
+                        <p class="text-sm mt-2">Learn data analysis, machine learning, and AI applications.</p>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg">AI and Machine Learning</h4>
+                        <p class="text-gray-600">Duration: 16 Weeks</p>
+                        <p class="text-sm mt-2">Master the fundamentals of AI and machine learning algorithms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="message-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Send Message</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please fill out the form below to send us a message. We'll respond as soon as possible.</p>
+                <form class="modal-form mt-4">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Cancel</button>
+                <button class="modal-btn modal-btn-primary">Send Message</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-success">
+                <div class="modal-success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="modal-success-title">Thank You!</h3>
+                <p class="modal-success-message">Your submission has been received. We'll contact you shortly.</p>
+                <button class="modal-btn modal-btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-    // Initialize Pie Chart - Programme Distribution
-    const programmeCtx = document.getElementById('programmeChart').getContext('2d');
-    const programmeChart = new Chart(programmeCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['MBA', 'MCA', 'M.Sc. Data Science'],
-            datasets: [{
-                data: [45, 35, 20],
-                backgroundColor: [
-                    '#3b82f6',
-                    '#14b8a6',
-                    '#a855f7'
-                ],
-                borderColor: '#ffffff',
-                borderWidth: 3,
-                hoverOffset: 10
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        font: { size: 14, weight: 'bold' },
-                        padding: 20,
-                        usePointStyle: true
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all modal triggers
+            const modalTriggers = document.querySelectorAll('.modal-trigger');
+            const modals = document.querySelectorAll('.modal');
+            const modalCloseButtons = document.querySelectorAll('.modal-close');
+            const modalSecondaryButtons = document.querySelectorAll('.modal-btn-secondary');
+            
+            // Open modal when trigger is clicked
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Close modal when close button is clicked
+            modalCloseButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Close modal when secondary button is clicked
+            modalSecondaryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Close modal when clicking outside the modal content
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.classList.contains('active')) {
+                            modal.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            });
+            
+            // Form submission handlers
+            const primaryButtons = document.querySelectorAll('.modal-btn-primary');
+            primaryButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                        
+                        // Show success modal
+                        const successModal = document.getElementById('success-modal');
+                        if (successModal) {
+                            successModal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    }
+                });
+            });
+            
+            // Close success modal
+            const successModalClose = document.querySelector('#success-modal .modal-btn-primary');
+            if (successModalClose) {
+                successModalClose.addEventListener('click', function() {
+                    const successModal = document.getElementById('success-modal');
+                    if (successModal) {
+                        successModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+
+        // Initialize Pie Chart - Programme Distribution
+        const programmeCtx = document.getElementById('programmeChart').getContext('2d');
+        const programmeChart = new Chart(programmeCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['MBA', 'MCA', 'M.Sc. Data Science'],
+                datasets: [{
+                    data: [45, 35, 20],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#14b8a6',
+                        '#a855f7'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 3,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 14, weight: 'bold' },
+                            padding: 20,
+                            usePointStyle: true
+                        }
                     }
                 }
             }
-        }
-    });
+        });
 
-    // Initialize Line Chart - Enrollment Trend
-    const enrollmentCtx = document.getElementById('enrollmentChart').getContext('2d');
-    const enrollmentChart = new Chart(enrollmentCtx, {
-        type: 'line',
-        data: {
-            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-            datasets: [{
-                label: 'Enrollments',
-                data: [150, 180, 230, 290, 340, 400],
-                borderColor: '#3b82f6',
-                backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#1e3a8a',
-                pointBorderWidth: 2,
-                pointHoverRadius: 6,
-                pointHoverBackgroundColor: '#2563eb'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { color: '#475569' },
-                    grid: { color: 'rgba(203, 213, 225, 0.3)' }
-                },
-                x: {
-                    ticks: { color: '#475569' },
-                    grid: { color: 'rgba(203, 213, 225, 0.1)' }
-                }
+        // Initialize Line Chart - Enrollment Trend
+        const enrollmentCtx = document.getElementById('enrollmentChart').getContext('2d');
+        const enrollmentChart = new Chart(enrollmentCtx, {
+            type: 'line',
+            data: {
+                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                datasets: [{
+                    label: 'Enrollments',
+                    data: [150, 180, 230, 290, 340, 400],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#1e3a8a',
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 6,
+                    pointHoverBackgroundColor: '#2563eb'
+                }]
             },
-            plugins: {
-                legend: {
-                    display: false
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#475569' },
+                        grid: { color: 'rgba(203, 213, 225, 0.3)' }
+                    },
+                    x: {
+                        ticks: { color: '#475569' },
+                        grid: { color: 'rgba(203, 213, 225, 0.1)' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
                 }
             }
+        });
+// Animated Number Counters - Each with different target values
+function animateValue(id, start, end, duration, suffix = "") {
+    const obj = document.getElementById(id);
+    const range = end - start;
+    const increment = end > start ? 1 : -1;
+    // Calculate step time to complete in approximately 1 second
+    const stepTime = Math.max(10, Math.abs(Math.floor(duration / range)));
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current + suffix;
+        if (current === end) {
+            clearInterval(timer);
         }
-    });
+    }, stepTime);
+}
 
-    // Animated Number Counters
-    function animateValue(id, start, end, duration, suffix = "") {
-        const obj = document.getElementById(id);
-        const range = end - start;
-        const minTimer = 50;
-        const stepTime = Math.max(Math.floor(duration / range), minTimer);
-        let current = start;
-        const timer = setInterval(() => {
-            current += 1;
-            obj.textContent = current + suffix;
-            if (current >= end) {
-                clearInterval(timer);
-            }
-        }, stepTime);
-    }
+// Start animations when the page loads
+window.addEventListener('load', function() {
+    // Each counter with its specific target value in 1 second
+    animateValue("totalStudents", 800, 1200, 0);
+    animateValue("activeProgrammes", 2, 3, 0);
+    animateValue("completionRate", 80, 92, 0, "%");
+    animateValue("avgRating", 3, 5,0, "/5");
+     animateValue()
+});
 
-    // Animate Total Students (0 → 1200)
-    animateValue("totalStudents", 0, 1200, 1500);
-
-    // Animate Completion Rate (0 → 92%)
-    let completion = 0;
-    const completionTarget = 92;
-    const completionEl = document.getElementById("completionRate");
-    const completionInterval = setInterval(() => {
-        completion++;
-        completionEl.textContent = completion + "%";
-        if (completion >= completionTarget) clearInterval(completionInterval);
-    }, 20);
-</script>
+    </script>
 </body>
 </html>
