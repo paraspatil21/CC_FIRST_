@@ -1317,7 +1317,7 @@
             padding: 5rem 2rem;
             background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
         }
-        
+
         .tools-cards-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -1325,7 +1325,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .tool-card {
             background: white;
             border-radius: 12px;
@@ -1340,58 +1340,82 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .tool-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .tool-card-header {
             width: 100%;
             margin-bottom: 1rem;
         }
-        
+
         .tool-card-title {
             font-size: 1rem;
             font-weight: 700;
             color: #1e3a8a;
             margin-bottom: 0.5rem;
-        }
-        
-        .tool-card-logos {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .tool-logo {
-            width: 40px;
-            height: 40px;
+            min-height: 2.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            background: #f8faff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        
-        .tool-logo img {
-            max-width: 30px;
-            max-height: 30px;
+
+        .tool-card-image {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .tool-card-image img {
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
+            border-radius: 8px;
         }
-        
+
         .tool-card-body {
             width: 100%;
         }
-        
+
         .tool-card-description {
             font-size: 0.875rem;
             color: #6b7280;
             line-height: 1.4;
         }
-        
+
+        /* Responsive styles for tools cards */
+        @media (max-width: 1024px) {
+            .tools-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tools-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tool-card-image {
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .tools-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tool-card-image {
+                height: 90px;
+            }
+        }
+
         /* NEW: FAQ Flip Cards Section */
         .faq-flip-section {
             padding: 5rem 2rem;
@@ -2928,245 +2952,263 @@
         </div>
     </section>
 
-    <!-- NEW: Tools Cards Section -->
-    <section class="tools-cards-section">
-        <div class="max-w-7xl mx-auto">
-            <div class="section-title">
-                <h2>Tools & Technologies Covered</h2>
-                <p>Hands-on experience with industry-relevant tools and technologies</p>
+    
+
+<!-- Tools & Technologies Covered Section -->
+<section class="tools-cards-section">
+    <div class="max-w-7xl mx-auto">
+        <div class="section-title">
+            <h2>Tools & Technologies Covered</h2>
+            <p>Hands-on experience with industry-relevant tools and technologies</p>
+        </div>
+        
+        <div class="tools-cards-grid mt-12">
+            <!-- Card 1: Python Programming -->
+            <div class="tool-card" data-aos="fade-up">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Python Programming</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/python.png" alt="Python Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Learn Python programming language for software development, data analysis, and automation.</p>
+                </div>
             </div>
             
-            <div class="tools-cards-grid mt-12">
-                <!-- Row 1 -->
-                <div class="tool-card" data-aos="fade-up">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Python Programming</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/python-logo.png" alt="Python Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Learn Python programming language for software development, data analysis, and automation.</p>
-                    </div>
+            <!-- Card 2: Database Systems -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Database Systems</h3>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Database Systems</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/sql-logo.png" alt="SQL Logo">
-                            </div>
-                            <div class="tool-logo">
-                                <img src="img/c-logo.png" alt="C Logo">
-                            </div>
-                            <div class="tool-logo">
-                                <img src="img/php-logo.png" alt="PHP Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Master database management with SQL, C, and PHP for backend development.</p>
-                    </div>
+                <div class="tool-card-image">
+                    <img src="img/SQL_C_PHP.png" alt="SQL Logo">
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Statistics for Data Science</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/r-logo.png" alt="R Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Use R programming for statistical analysis and data visualization in data science projects.</p>
-                    </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Master database management with SQL, C, and PHP for backend development.</p>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Computer Networks</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/cisco-logo.png" alt="Cisco Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Configure and troubleshoot networks using Cisco Packet Tracer for practical networking skills.</p>
-                    </div>
+            </div>
+            
+            <!-- Card 3: Statistics for Data Science -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Statistics for Data Science</h3>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Programming in Java</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/eclipse-logo.png" alt="Eclipse Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Develop Java applications using Eclipse IDE for enterprise-level software development.</p>
-                    </div>
+                <div class="tool-card-image">
+                    <img src="img/R.jpeg" alt="R Logo">
                 </div>
-                
-                <!-- Row 2 -->
-                <div class="tool-card" data-aos="fade-up">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Artificial Intelligence</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/jupyter-logo.png" alt="Jupyter Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Build AI models and algorithms using Jupyter notebooks for data analysis and machine learning.</p>
-                    </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Use R programming for statistical analysis and data visualization in data science projects.</p>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Machine Learning</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/matlab-logo.png" alt="MATLAB Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Implement ML algorithms using MATLAB for numerical computing and data analysis.</p>
-                    </div>
+            </div>
+            
+            <!-- Card 4: Computer Networks -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Computer Networks</h3>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Cyber Security</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/ruby-logo.png" alt="Ruby Logo">
-                            </div>
-                            <div class="tool-logo">
-                                <img src="img/pentest-logo.png" alt="Pentest Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Learn cybersecurity principles and penetration testing using Ruby and security tools.</p>
-                    </div>
+                <div class="tool-card-image">
+                    <img src="img/CISKO.png" alt="Cisco Logo">
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Software QA and Reliability</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/selenium-logo.png" alt="Selenium Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Automate testing processes using Selenium for web application quality assurance.</p>
-                    </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Configure and troubleshoot networks using Cisco Packet Tracer for practical networking skills.</p>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Virtual and Augmented Reality</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/vuforia-logo.png" alt="Vuforia Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Develop immersive VR/AR experiences using Vuforia for augmented reality applications.</p>
-                    </div>
+            </div>
+            
+            <!-- Card 5: Programming in Java -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Programming in Java</h3>
                 </div>
-                
-                <!-- Row 3 -->
-                <div class="tool-card" data-aos="fade-up">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Big Data Analytics</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/hadoop-logo.png" alt="Hadoop Logo">
-                            </div>
-                            <div class="tool-logo">
-                                <img src="img/spark-logo.png" alt="Spark Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Process and analyze large datasets using Hadoop and Apache Spark for big data solutions.</p>
-                    </div>
+                <div class="tool-card-image">
+                    <img src="img/Eclipse IDE.png" alt="Eclipse Logo">
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Mobile Application Development</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/xcode-logo.png" alt="Xcode Logo">
-                            </div>
-                            <div class="tool-logo">
-                                <img src="img/android-studio-logo.png" alt="Android Studio Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Build iOS and Android apps using Xcode and Android Studio for cross-platform development.</p>
-                    </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Develop Java applications using Eclipse IDE for enterprise-level software development.</p>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Cyber Forensics</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/metasploit-logo.png" alt="Metasploit Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Investigate cyber incidents using Metasploit for penetration testing and digital forensics.</p>
-                    </div>
+            </div>
+            
+            <!-- Card 6: Artificial Intelligence -->
+            <div class="tool-card" data-aos="fade-up">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Artificial Intelligence</h3>
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Blockchain Technologies</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/solidity-logo.png" alt="Solidity Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Develop smart contracts and decentralized apps using Solidity for blockchain solutions.</p>
-                    </div>
+                <div class="tool-card-image">
+                    <img src="img/jupyter notebooks.png" alt="Jupyter Logo">
                 </div>
-                
-                <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tool-card-header">
-                        <h3 class="tool-card-title">Data Mining Techniques</h3>
-                        <div class="tool-card-logos">
-                            <div class="tool-logo">
-                                <img src="img/rapidminer-logo.png" alt="RapidMiner Logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-card-body">
-                        <p class="tool-card-description">Extract insights from data using RapidMiner for predictive analytics and data mining.</p>
-                    </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Build AI models and algorithms using Jupyter notebooks for data analysis and machine learning.</p>
+                </div>
+            </div>
+            
+            <!-- Card 7: Machine Learning -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Machine Learning</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/MATLAB.jpeg" alt="MATLAB Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Implement ML algorithms using MATLAB for numerical computing and data analysis.</p>
+                </div>
+            </div>
+            
+            <!-- Card 8: Cyber Security -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Cyber Security</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Ruby_penetration.png" alt="Ruby Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Learn cybersecurity principles and penetration testing using Ruby and security tools.</p>
+                </div>
+            </div>
+            
+            <!-- Card 9: Software QA and Reliability -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Software QA and Reliability</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Selenium.png" alt="Selenium Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Automate testing processes using Selenium for web application quality assurance.</p>
+                </div>
+            </div>
+            
+            <!-- Card 10: Virtual and Augmented Reality -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Virtual and Augmented Reality</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Vuforia.png" alt="Vuforia Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Develop immersive VR/AR experiences using Vuforia for augmented reality applications.</p>
+                </div>
+            </div>
+            
+            <!-- Card 11: Big Data Analytics -->
+            <div class="tool-card" data-aos="fade-up">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Big Data Analytics</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Spark_ Haddop.png" alt="Hadoop Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Process and analyze large datasets using Hadoop and Apache Spark for big data solutions.</p>
+                </div>
+            </div>
+            
+            <!-- Card 12: Mobile Application Development -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Mobile Application Development</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Android_XCode.png" alt="Xcode Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Build iOS and Android apps using Xcode and Android Studio for cross-platform development.</p>
+                </div>
+            </div>
+            
+            <!-- Card 13: Cyber Forensics -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Cyber Forensics</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Metasploit.png" alt="Metasploit Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Investigate cyber incidents using Metasploit for penetration testing and digital forensics.</p>
+                </div>
+            </div>
+            
+            <!-- Card 14: Blockchain Technologies -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Blockchain Technologies</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/Solidity.png" alt="Solidity Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Develop smart contracts and decentralized apps using Solidity for blockchain solutions.</p>
+                </div>
+            </div>
+            
+            <!-- Card 15: Data Mining Techniques -->
+            <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="tool-card-header">
+                    <h3 class="tool-card-title">Data Mining Techniques</h3>
+                </div>
+                <div class="tool-card-image">
+                    <img src="img/RapidMiner.png" alt="RapidMiner Logo">
+                </div>
+                <div class="tool-card-body">
+                    <p class="tool-card-description">Extract insights from data using RapidMiner for predictive analytics and data mining.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Programme Structure Section -->
     <section class="py-20 px-6 section-accent">

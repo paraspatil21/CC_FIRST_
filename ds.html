@@ -666,7 +666,6 @@
             background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
         }
         
-       
         /* New Hero Section Styles */
         .hero-section {
             background: url('img/vit_hero.png');
@@ -1409,6 +1408,7 @@
             background: transparent;
             perspective: 1000px;
             height: 250px;
+            cursor: pointer;
         }
         
         .faq-flip-card-inner {
@@ -2306,6 +2306,13 @@
         .salary-amount {
             margin-left: auto;
         }
+
+        /* Add this to your existing CSS */
+        .tool-image {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="futuristic-bg">
@@ -2741,206 +2748,77 @@
         </div>
     </section>
 
-    <!-- Accreditations and Recognition Section -->
-    <section class="py-20 px-6 section-light">
-        <div class="max-w-7xl mx-auto">
-            <div class="section-title">
-                <h2>Accreditations and Recognition</h2>
-                <p>VIT's commitment to quality education is recognized by prestigious accreditation bodies</p>
+<!-- Tools Covered Section -->
+<section class="py-20 px-6 section-accent">
+    <div class="max-w-7xl mx-auto">
+        <div class="section-title">
+            <h2>Tools Covered</h2>
+            <p>Hands-on experience with industry-relevant data science tools and technologies</p>
+        </div>
+        
+        <div class="tools-grid mt-12">
+            <div class="tool-item" data-aos="fade-up">
+                <div class="tool-icon">
+                    <img src="img/python.png" alt="Python" class="tool-image">
+                </div>
+                <h4 class="font-bold text-gray-800">Python</h4>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                <div class="accreditation-card" data-aos="fade-up">
-                    <div class="accreditation-logo">
-                        <img src="img/QS.png" alt="QS Rating">
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">QS 4-Star Rating</h3>
-                    <p class="accreditation-text">VIT is the first institute of India to receive QS 4-Star rating in overall institute ranking category</p>
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="tool-icon">
+                    <img src="img/sql.png" alt="SQL" class="tool-image">
                 </div>
-                
-                <div class="accreditation-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="accreditation-logo">
-                        <img src="img/QS.png" alt="QS 5-Star Rating">
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">QS 5-Star Rating</h3>
-                    <p class="accreditation-text">5-Star rating in teaching, employability, facilities, innovation and inclusiveness</p>
+                <h4 class="font-bold text-gray-800">SQL</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="tool-icon">
+                    <img src="img/R.jpeg" alt="R Programming" class="tool-image">
                 </div>
-                
-                <div class="accreditation-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="accreditation-logo">
-                        <img src="img/UGC.png" alt="UGC Recognition">
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">UGC Recognition</h3>
-                    <p class="accreditation-text">Programmes Recognised by Distance Education Bureau (DEB) UGC</p>
+                <h4 class="font-bold text-gray-800">R Programming</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="tool-icon">
+                    <img src="img/jupyter notebooks.png" alt="Jupyter" class="tool-image">
                 </div>
-                
-                <div class="accreditation-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="accreditation-logo">
-                        <img src="img/NAAC.png" alt="NAAC Accreditation">
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">NAAC A++ Grade</h3>
-                    <p class="accreditation-text">National Assessment and Accreditation Council (NAAC) has accredited VIT with the highest grade 'A++' in 2021 (4th cycle)</p>
+                <h4 class="font-bold text-gray-800">Jupyter</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="tool-icon">
+                    <img src="img/scikit learn.png" alt="Scikit Learn" class="tool-image">
                 </div>
-                
-                <div class="accreditation-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="accreditation-logo">
-                        <img src="img/WES.png" alt="WES Recognition">
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">WES Recognition</h3>
-                    <p class="accreditation-text">Programmes Recognised by World Education Services (WES)</p>
+                <h4 class="font-bold text-gray-800">Scikit Learn</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="tool-icon">
+                    <img src="img/hadoop.png" alt="Hadoop" class="tool-image">
                 </div>
+                <h4 class="font-bold text-gray-800">Hadoop</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="tool-icon">
+                    <img src="img/Tableau.png" alt="Tableau" class="tool-image">
+                </div>
+                <h4 class="font-bold text-gray-800">Tableau</h4>
+            </div>
+            
+            <div class="tool-item" data-aos="fade-up" data-aos-delay="700">
+                <div class="tool-icon">
+                    <img src="img/Pandas.png" alt="Pandas" class="tool-image">
+                </div>
+                <h4 class="font-bold text-gray-800">Pandas</h4>
             </div>
         </div>
-    </section>
-
-    <!-- Who Should Choose this Programme? Section -->
-    <section class="py-20 px-6 section-accent">
-        <div class="max-w-7xl mx-auto">
-            <div class="section-title">
-                <h2>Who Should Choose this Programme?</h2>
-                <p>VIT's Master of Science in Data Science programme caters early to mid-level professionals poised to take their careers to the next level.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-                <div data-aos="fade-right">
-                    <p class="text-gray-600 mb-6">This programme will complement your existing experience and expertise by empowering you with advanced data science skills.</p>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-                        <h4 class="text-xl font-bold mb-4 text-indigo-800">Aspiring Senior Roles and Data Science Careers</h4>
-                        <p class="text-gray-600">This programme is tailored for those looking to step into senior roles and secure analytics-based or data science-related positions. Whether you come from tech, finance, healthcare, or any industry, this programme equips you with the analytical knowledge needed to excel.</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="text-xl font-bold mb-4 text-indigo-800">A Path to Better Pay, Position, and Career Growth</h4>
-                        <p class="text-gray-600">If you're seeking better pay, enhanced job positions, and accelerated career growth, our Online Master of Science in Data Science is your strategic vehicle. It unlocks opportunities in the data-driven world and positions you for success.</p>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Past Participant Profile</h3>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-                        <h4 class="text-xl font-bold mb-4 text-indigo-800">Work Experience Distribution</h4>
-                        <div class="chart-container" style="height: 250px;">
-                            <canvas id="workExperienceChart"></canvas>
-                        </div>
-                        <p class="text-gray-500 text-sm mt-4">Based on past participant data</p>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="text-xl font-bold mb-4 text-indigo-800">Job Functions Analysis</h4>
-                        <div class="chart-container" style="height: 250px;">
-                            <canvas id="jobFunctionsChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="bg-gray-100 p-4 rounded-lg mt-8 text-center">
+            <p class="text-gray-600 text-sm">Note: All product and company names mentioned in this material are trademarks or registered trademarks of their respective holders. Their use does not imply any affiliation with or endorsement by them.</p>
         </div>
-    </section>
-
-    <!-- Past Participant's Companies Section -->
-    <section class="py-16 px-6 section-light">
-        <div class="max-w-7xl mx-auto">
-            <div class="section-title">
-                <h2>Our Students Work At</h2>
-                <p>VIT M.Sc Data Science graduates are employed at top companies across industries</p>
-            </div>
-            
-            <div class="logo-grid mt-12">
-                <div class="logo-item" data-aos="fade-up">
-                    <img src="img/Deloitte.png" alt="Deloitte">
-                </div>
-                <div class="logo-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="img/Congnizant.png" alt="Cognizant">
-                </div>
-                <div class="logo-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="img/myntra.png" alt="Myntra">
-                </div>
-                <div class="logo-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="img/infosys.png" alt="Infosys">
-                </div>
-                <div class="logo-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="img/uber.png" alt="Uber">
-                </div>
-            </div>
-            
-            <div class="bg-gray-100 p-4 rounded-lg mt-8 text-center">
-                <p class="text-gray-600 text-sm">Note: *All product and company names are trademarks or registered trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Covered Section -->
-    <section class="py-20 px-6 section-accent">
-        <div class="max-w-7xl mx-auto">
-            <div class="section-title">
-                <h2>Tools Covered</h2>
-                <p>Hands-on experience with industry-relevant data science tools and technologies</p>
-            </div>
-            
-            <div class="tools-grid mt-12">
-                <div class="tool-item" data-aos="fade-up">
-                    <div class="tool-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Python</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tool-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">R Programming</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tool-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Jupyter</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tool-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Scikit Learn</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tool-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">SQL</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="tool-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Hadoop</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="tool-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Tableau</h4>
-                </div>
-                
-                <div class="tool-item" data-aos="fade-up" data-aos-delay="700">
-                    <div class="tool-icon">
-                        <i class="fas fa-table"></i>
-                    </div>
-                    <h4 class="font-bold text-gray-800">Pandas</h4>
-                </div>
-            </div>
-            
-            <div class="bg-gray-100 p-4 rounded-lg mt-8 text-center">
-                <p class="text-gray-600 text-sm">Note: All product and company names mentioned in this material are trademarks or registered trademarks of their respective holders. Their use does not imply any affiliation with or endorsement by them.</p>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Programme Structure Section -->
     <section class="py-20 px-6 section-light">
@@ -3057,7 +2935,7 @@
                 <div data-aos="fade-left">
                     <div class="coordinator-card">
                         <div class="coordinator-img">
-                            <img src="img/dr_peri_kameswara.png" alt="Dr PERI KAMESWARA KAMESWARAN">
+                            <img src="img/Dr_PERI_KAMESWARA_KAMESWARAN.png" alt="Dr PERI KAMESWARA KAMESWARAN">
                         </div>
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Dr PERI KAMESWARA KAMESWARAN</h3>
                         <p class="text-lg text-gray-600 mb-4">Associate Professor</p>
