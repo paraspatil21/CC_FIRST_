@@ -953,48 +953,7 @@
                 </div>
             </div>
             
-            <!-- Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="stat-card scale-up" style="animation-delay: 0.1s">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600 text-sm font-medium">Total Students</p>
-                            <p class="text-3xl font-bold text-blue-600 mt-2" id="totalStudents">0</p>
-                        </div>
-                        <i class="fas fa-users text-4xl text-blue-200"></i>
-                    </div>
-                </div>
-                
-                <div class="stat-card scale-up" style="animation-delay: 0.2s">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600 text-sm font-medium">Active Programmes</p>
-                            <p class="text-3xl font-bold text-green-600 mt-2" id="activeProgrammes">0</p>
-                        </div>
-                        <i class="fas fa-book text-4xl text-green-200"></i>
-                    </div>
-                </div>
-                
-                <div class="stat-card scale-up" style="animation-delay: 0.3s">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600 text-sm font-medium">Completion Rate</p>
-                            <p class="text-3xl font-bold text-purple-600 mt-2" id="completionRate">0%</p>
-                        </div>
-                        <i class="fas fa-check-circle text-4xl text-purple-200"></i>
-                    </div>
-                </div>
-                
-                <div class="stat-card scale-up" style="animation-delay: 0.4s">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-gray-600 text-sm font-medium">Almost Avg. Rating</p>
-                            <p class="text-3xl font-bold text-yellow-600 mt-2" id="avgRating">0/5</p>
-                        </div>
-                        <i class="fas fa-star text-4xl text-yellow-200"></i>
-                    </div>
-                </div>
-            </div>
+            <!-- Stats Grid - REMOVED AS REQUESTED -->
         </div>
     </section>
 
@@ -1062,44 +1021,96 @@
     <section class="py-16 px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Certificate Programmes -->
-                <div class="bg-gradient-to-br from-amber-50 to-orange-100 rounded-2xl p-8 shadow-lg">
-                    <h2 class="text-3xl font-bold mb-6 text-amber-800">Certificate Programmes</h2>
-                    
-                    <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Data Science and AI Programme</h3>
-                        <div class="flex items-center mb-4">
-                            <i class="far fa-clock text-amber-600 mr-2"></i>
-                            <span class="text-gray-600">Duration: 16 weeks</span>
-                        </div>
-                        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="certificate-modal">
-                            Know More
-                        </button>
-                    </div>
-                    
-                    <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">AI and Machine Learning</h3>
-                        <div class="flex items-center mb-4">
-                            <i class="far fa-clock text-amber-600 mr-2"></i>
-                            <span class="text-gray-600">Duration: 16 Weeks</span>
-                        </div>
-                        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="certificate-modal">
-                            Know More
-                        </button>
-                    </div>
-                    
-                    <div class="h-px bg-amber-200 my-8"></div>
-                    
-                    <div>
-                        <h3 class="text-xl font-bold mb-4 text-amber-800">Vision</h3>
-                        <p class="text-gray-700 mb-6">Enriching life through excellence in online education.</p>
-                        
-                        <h3 class="text-xl font-bold mb-4 text-amber-800">Mission</h3>
-                        <p class="text-gray-700 mb-4">World class online Education: Excellence in online education, grounded in ethics and critical thinking, for improvement of life.</p>
-                        <p class="text-gray-700 mb-4">Creating and offering online education with the help of cutting edge technologies to aspiring learners globally.</p>
-                        <p class="text-gray-700">Providing an ambience for self-paced learning.</p>
-                    </div>
-                </div>
+               <!-- Certificate Programmes -->
+<div class="bg-gradient-to-br from-amber-50 to-orange-100 rounded-2xl p-8 shadow-lg">
+    <h2 class="text-3xl font-bold mb-6 text-amber-800">Certificate Programmes</h2>
+    
+    <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
+        <h3 class="text-xl font-bold mb-3 text-gray-800">Data Science and AI Programme</h3>
+        <div class="flex items-center mb-4">
+            <i class="far fa-clock text-amber-600 mr-2"></i>
+            <span class="text-gray-600">Duration: 16 weeks</span>
+        </div>
+        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="data-science-form-modal">
+            Know More
+        </button>
+    </div>
+    
+    <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
+        <h3 class="text-xl font-bold mb-3 text-gray-800">AI and Machine Learning</h3>
+        <div class="flex items-center mb-4">
+            <i class="far fa-clock text-amber-600 mr-2"></i>
+            <span class="text-gray-600">Duration: 16 Weeks</span>
+        </div>
+        <button class="modal-trigger px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors" data-modal="ai-ml-form-modal">
+            Know More
+        </button>
+    </div>
+    
+    <div class="h-px bg-amber-200 my-8"></div>
+    
+    <div>
+        <h3 class="text-xl font-bold mb-4 text-amber-800">Vision</h3>
+        <p class="text-gray-700 mb-6">Enriching life through excellence in online education.</p>
+        
+        <h3 class="text-xl font-bold mb-4 text-amber-800">Mission</h3>
+        <p class="text-gray-700 mb-4">World class online Education: Excellence in online education, grounded in ethics and critical thinking, for improvement of life.</p>
+        <p class="text-gray-700 mb-4">Creating and offering online education with the help of cutting edge technologies to aspiring learners globally.</p>
+        <p class="text-gray-700">Providing an ambience for self-paced learning.</p>
+    </div>
+</div>
+
+<!-- Data Science and AI Form Modal -->
+<div class="modal" id="data-science-form-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Apply Now for Data Science and AI Programme</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form class="modal-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Programme</option>
+                    <option value="data-science">Data Science and AI Programme</option>
+                </select>
+                <textarea placeholder="Additional Information (Optional)" rows="3"></textarea>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn modal-btn-secondary">Cancel</button>
+            <button class="modal-btn modal-btn-primary">Submit Application</button>
+        </div>
+    </div>
+</div>
+
+<!-- AI and Machine Learning Form Modal -->
+<div class="modal" id="ai-ml-form-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Apply Now for AI and Machine Learning Programme</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form class="modal-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Programme</option>
+                    <option value="ai-ml">AI and Machine Learning Programme</option>
+                </select>
+                <textarea placeholder="Additional Information (Optional)" rows="3"></textarea>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn modal-btn-secondary">Cancel</button>
+            <button class="modal-btn modal-btn-primary">Submit Application</button>
+        </div>
+    </div>
+</div>
                 
                 <!-- Stats Section -->
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-lg">
@@ -1503,26 +1514,50 @@
         </div>
     </div>
 
-    <div class="modal" id="certificate-modal">
+    <!-- Data Science Certificate Modal -->
+    <div class="modal" id="data-science-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Certificate Programmes</h3>
+                <h3 class="modal-title">Data Science and AI Programme</h3>
                 <button class="modal-close">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Our certificate programmes are designed to provide specialized skills in high-demand areas.</p>
-                <div class="space-y-4 mt-4">
-                    <div class="p-4 border border-gray-200 rounded-lg">
-                        <h4 class="font-bold text-lg">Data Science and AI Programme</h4>
-                        <p class="text-gray-600">Duration: 16 weeks</p>
-                        <p class="text-sm mt-2">Learn data analysis, machine learning, and AI applications.</p>
-                    </div>
-                    <div class="p-4 border border-gray-200 rounded-lg">
-                        <h4 class="font-bold text-lg">AI and Machine Learning</h4>
-                        <p class="text-gray-600">Duration: 16 Weeks</p>
-                        <p class="text-sm mt-2">Master the fundamentals of AI and machine learning algorithms.</p>
-                    </div>
-                </div>
+                <p><strong>Data Science and AI Certificate Programme</strong></p>
+                <p>Duration: 16 weeks</p>
+                <p>Our Data Science and AI programme provides comprehensive training in data analysis, machine learning, and artificial intelligence applications.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>Hands-on projects with real-world datasets</li>
+                    <li>Python programming and data visualization</li>
+                    <li>Machine learning algorithms and techniques</li>
+                    <li>AI model development and deployment</li>
+                    <li>Industry mentorship and career guidance</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary">Close</button>
+                <button class="modal-btn modal-btn-primary">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI and Machine Learning Certificate Modal -->
+    <div class="modal" id="ai-ml-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">AI and Machine Learning Programme</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>AI and Machine Learning Certificate Programme</strong></p>
+                <p>Duration: 16 Weeks</p>
+                <p>Our AI and Machine Learning programme focuses on the fundamentals of artificial intelligence, neural networks, and advanced machine learning techniques.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2">
+                    <li>Deep learning and neural networks</li>
+                    <li>Natural language processing</li>
+                    <li>Computer vision applications</li>
+                    <li>Reinforcement learning</li>
+                    <li>Industry projects and case studies</li>
+                </ul>
             </div>
             <div class="modal-footer">
                 <button class="modal-btn modal-btn-secondary">Close</button>
@@ -1738,34 +1773,6 @@
                 }
             }
         });
-// Animated Number Counters - Each with different target values
-function animateValue(id, start, end, duration, suffix = "") {
-    const obj = document.getElementById(id);
-    const range = end - start;
-    const increment = end > start ? 1 : -1;
-    // Calculate step time to complete in approximately 1 second
-    const stepTime = Math.max(10, Math.abs(Math.floor(duration / range)));
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        obj.textContent = current + suffix;
-        if (current === end) {
-            clearInterval(timer);
-        }
-    }, stepTime);
-}
-
-// Start animations when the page loads
-window.addEventListener('load', function() {
-    // Each counter with its specific target value in 1 second
-    animateValue("totalStudents", 800, 1200, 0);
-    animateValue("activeProgrammes", 2, 3, 0);
-    animateValue("completionRate", 80, 92, 0, "%");
-    animateValue("avgRating", 3, 5,0, "/5");
-     animateValue()
-});
-
     </script>
 </body>
-</html> 
+</html>

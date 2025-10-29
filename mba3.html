@@ -31,8 +31,8 @@
             color: #1a1a2e;
             overflow-x: hidden;
         }
-        
-        /* Modal Styles */
+
+        /* Modal Styles - Updated to match MCA code */
         .modal {
             display: none;
             position: fixed;
@@ -40,23 +40,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
-        
+
         .modal-content {
-            background: white;
-            border-radius: 16px;
+            background-color: white;
+            border-radius: 12px;
             width: 90%;
             max-width: 500px;
             padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease-out;
         }
-        
+
         @keyframes modalFadeIn {
             from {
                 opacity: 0;
@@ -67,120 +67,76 @@
                 transform: translateY(0);
             }
         }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e3a8a;
-        }
-        
+
         .close-modal {
-            background: none;
-            border: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
             font-size: 1.5rem;
             cursor: pointer;
             color: #6b7280;
             transition: color 0.3s;
         }
-        
+
         .close-modal:hover {
-            color: #374151;
+            color: #4f46e5;
         }
-        
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+            text-align: center;
+        }
+
         .modal-form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        
-        .form-group {
+
+        .modal-form-group {
             display: flex;
             flex-direction: column;
         }
-        
-        .form-label {
+
+        .modal-form-group label {
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: #374151;
         }
-        
-        .form-input {
-            padding: 0.75rem 1rem;
+
+        .modal-form-group input,
+        .modal-form-group select {
+            padding: 0.75rem;
             border: 1px solid #d1d5db;
             border-radius: 8px;
             font-size: 1rem;
             transition: all 0.3s;
         }
-        
-        .form-input:focus {
+
+        .modal-form-group input:focus,
+        .modal-form-group select:focus {
             outline: none;
             border-color: #3b82f6;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
-        
-        .phone-input-group {
-            display: flex;
-        }
-        
-        .country-code {
-            width: 30%;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-right: none;
-        }
-        
-        .phone-number {
-            width: 70%;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-        
-        .no-surname {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .no-surname input {
-            width: auto;
-        }
-        
-        .no-surname label {
-            margin-bottom: 0;
-            font-weight: 400;
-            font-size: 0.875rem;
-        }
-        
-        .form-disclaimer {
-            font-size: 0.75rem;
-            color: #6b7280;
-            margin-top: 1rem;
-            line-height: 1.4;
-        }
-        
-        .modal-button {
-            width: 100%;
-            padding: 0.75rem;
+
+        .modal-submit-button {
             background: linear-gradient(135deg, #1e3a8a, #2563eb);
             color: white;
             border: none;
             border-radius: 8px;
+            padding: 0.75rem;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 1rem;
         }
-        
-        .modal-button:hover {
+
+        .modal-submit-button:hover {
             background: linear-gradient(135deg, #1e40af, #3b82f6);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
@@ -820,24 +776,7 @@
             background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
         }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #a855f7, #4f46e5);
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #9333ea, #4338ca);
-        }
+      
 
         /* New Hero Section Styles */
         .hero-section {
@@ -1483,6 +1422,159 @@
             gap: 1.5rem;
         }
 
+        /* NEW: FAQ Flip Cards Section */
+        .faq-flip-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+        }
+        
+        .faq-flip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .faq-flip-card {
+            background: transparent;
+            perspective: 1000px;
+            height: 250px;
+        }
+        
+        .faq-flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .faq-flip-card.flipped .faq-flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .faq-flip-card-front, .faq-flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-flip-card-front {
+            background: white;
+            color: #1e3a8a;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .faq-flip-card-back {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .faq-flip-card-question {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-flip-card-answer {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .faq-flip-card-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+        }
+        
+        .faq-flip-card-back .faq-flip-card-category {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .faq-flip-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4f46e5;
+        }
+        
+        .faq-flip-card-back .faq-flip-card-icon {
+            color: white;
+        }
+
+        /* Responsive styles for FAQ flip cards */
+        @media (max-width: 1024px) {
+            .faq-flip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faq-flip-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accreditation Card Styles */
+        .accreditation-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .accreditation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accreditation-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .accreditation-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .accreditation-text {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
         /* Responsive Styles */
         @media (max-width: 1024px) {
             .book-container {
@@ -1907,104 +1999,34 @@
                 gap: 0.5rem;
             }
         }
-        
-        /* Accreditation Card Styles */
-        .accreditation-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border: 1px solid #e5e7eb;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        
-        .accreditation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .accreditation-logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .accreditation-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .accreditation-text {
-            color: #4b5563;
-            line-height: 1.6;
-        }
     </style>
 </head>
 <body class="futuristic-bg">
-    <!-- Modal Popup -->
+    <!-- Modal Popup - Updated to match MCA code -->
     <div id="applicationModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Apply for MBA Programme</h2>
-                <button class="close-modal">&times;</button>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Apply for MBA Programme</h2>
             <form class="modal-form">
-                <div class="form-group">
-                    <label for="modalFirstName" class="form-label">First Name</label>
-                    <input type="text" id="modalFirstName" class="form-input" placeholder="First Name" required>
+                <div class="modal-form-group">
+                    <label for="modalFirstName">First Name</label>
+                    <input type="text" id="modalFirstName" placeholder="First Name" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modalLastName" class="form-label">Last Name</label>
-                    <input type="text" id="modalLastName" class="form-input" placeholder="Last Name" required>
-                    <div class="no-surname">
-                        <input type="checkbox" id="modalNoSurname">
-                        <label for="modalNoSurname">I Don't have a Surname or Last Name</label>
-                    </div>
+                <div class="modal-form-group">
+                    <label for="modalLastName">Last Name</label>
+                    <input type="text" id="modalLastName" placeholder="Last Name" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modalEmail" class="form-label">Email</label>
-                    <input type="email" id="modalEmail" class="form-input" placeholder="Email" required>
+                <div class="modal-form-group">
+                    <label for="modalEmail">Email</label>
+                    <input type="email" id="modalEmail" placeholder="Email" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modalCountry" class="form-label">Country</label>
-                    <select id="modalCountry" class="form-input">
-                        <option>India</option>
-                        <option>United States</option>
-                        <option>United Kingdom</option>
-                        <option>Canada</option>
-                        <option>Australia</option>
-                        <option>Other</option>
-                    </select>
+                <div class="modal-form-group">
+                    <label for="modalPhone">Phone Number</label>
+                    <input type="tel" id="modalPhone" placeholder="Phone Number" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modalPhone" class="form-label">Mobile Number</label>
-                    <div class="phone-input-group">
-                        <select class="form-input country-code">
-                            <option>+91</option>
-                            <option>+1</option>
-                            <option>+44</option>
-                        </select>
-                        <input type="tel" id="modalPhone" class="form-input phone-number" placeholder="Phone" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalExperience" class="form-label">Work Experience</label>
-                    <select id="modalExperience" class="form-input">
+                <div class="modal-form-group">
+                    <label for="modalExperience">Work Experience</label>
+                    <select id="modalExperience" required>
                         <option value="">Select Work Experience</option>
                         <option value="0-2">0-2 years</option>
                         <option value="3-5">3-5 years</option>
@@ -2012,30 +2034,7 @@
                         <option value="10+">10+ years</option>
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="modalGraduation" class="form-label">Graduation Year/Expected Graduation Year</label>
-                    <select id="modalGraduation" class="form-input">
-                        <option value="">Select Graduation Year</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019 or earlier</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalCity" class="form-label">City</label>
-                    <input type="text" id="modalCity" class="form-input" placeholder="City" required>
-                </div>
-                
-                <p class="form-disclaimer">
-                    By clicking the button below, you agree to receive communications via Email/Call/WhatsApp/SMS from VIT and its associates about this programme and other relevant programmes. This will override registry on DND/NDNC.
-                </p>
-                
-                <button type="submit" class="modal-button">Submit Application</button>
+                <button type="submit" class="modal-submit-button">Submit Application</button>
             </form>
         </div>
     </div>
@@ -2625,106 +2624,6 @@
     </div>
 </section>
 
-<script>
-// Add this JavaScript code to your existing script section
-// Work Experience Chart
-const workExpCtx = document.getElementById('workExperienceChart').getContext('2d');
-const workExpChart = new Chart(workExpCtx, {
-    type: 'doughnut',
-    data: {
-        labels: ['<5 Years', '5-9 Years', '10-14 Years', '15-19 Years', '20+ Years'],
-        datasets: [{
-            data: [15, 24, 8, 48, 5],
-            backgroundColor: [
-                'rgba(102, 126, 234, 0.8)',
-                'rgba(167, 139, 250, 0.8)',
-                'rgba(79, 70, 229, 0.8)',
-                'rgba(236, 72, 153, 0.8)',
-                'rgba(16, 185, 129, 0.8)'
-            ],
-            borderColor: [
-                'rgba(102, 126, 234, 1)',
-                'rgba(167, 139, 250, 1)',
-                'rgba(79, 70, 229, 1)',
-                'rgba(236, 72, 153, 1)',
-                'rgba(16, 185, 129, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                position: 'right',
-                labels: {
-                    font: { size: 12 },
-                    padding: 15,
-                    usePointStyle: true
-                }
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        return `${context.label}: ${context.raw}%`;
-                    }
-                }
-            }
-        }
-    }
-});
-
-// Job Functions Chart
-const jobFuncCtx = document.getElementById('jobFunctionsChart').getContext('2d');
-const jobFuncChart = new Chart(jobFuncCtx, {
-    type: 'bar',
-    data: {
-        labels: ['IT/Technology', 'Sales', 'Engineering', 'HR', 'Operations', 'Finance', 'Research', 'Strategy', 'Education', 'Consulting', 'Legal', 'Manufacturing'],
-        datasets: [{
-            label: 'Percentage of Participants',
-            data: [22, 18, 15, 12, 10, 8, 5, 4, 3, 2, 1, 0.5],
-            backgroundColor: 'rgba(79, 70, 229, 0.7)',
-            borderColor: 'rgba(79, 70, 229, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            x: {
-                beginAtZero: true,
-                ticks: {
-                    color: '#475569',
-                    callback: function(value) {
-                        return value + '%';
-                    }
-                },
-                grid: { color: 'rgba(203, 213, 225, 0.3)' }
-            },
-            y: {
-                ticks: { 
-                    color: '#475569',
-                    font: { size: 11 }
-                },
-                grid: { color: 'rgba(203, 213, 225, 0.1)' }
-            }
-        },
-        plugins: {
-            legend: {
-                display: false
-            }
-        }
-    }
-});
-</script>
-             
-         
-
-                  
-
     <!-- Company Logos Section -->
     <section class="py-16 px-6 section-accent">
         <div class="max-w-7xl mx-auto">
@@ -3061,406 +2960,380 @@ const jobFuncChart = new Chart(jobFuncCtx, {
         </div>
     </section>
 
- <!-- Questions You Might Have Section -->
-<section class="py-20 px-6 section-accent">
-    <div class="max-w-7xl mx-auto">
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
-            <p>Find answers to commonly asked questions about the programme</p>
-        </div>
-        
-        <div class="faq-container mt-12">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- NEW: FAQ Flip Cards Section -->
+    <section class="faq-flip-section">
+        <div class="max-w-7xl mx-auto">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Click on any question card to flip and see the answer</p>
+            </div>
+            
+            <div class="faq-flip-grid mt-12">
                 <!-- Programme FAQs -->
-                <div class="faq-category" data-aos="fade-up">
-                    <div class="category-header bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-t-xl">
-                        <div class="flex items-center">
-                            <i class="fas fa-graduation-cap text-2xl mr-4"></i>
-                            <h3 class="text-2xl font-bold">Programme</h3>
+                <div class="faq-flip-card" data-aos="fade-up">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="faq-flip-card-question">Will the online MBA be recognized while applying for jobs?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        <p class="mt-2 text-indigo-100">About the MBA Programme</p>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <p class="faq-flip-card-answer">Yes, VIT's online MBA degree is UGC-entitled and AICTE-approved and accepted by governments, corporate organizations, and higher education institutions.</p>
+                        </div>
                     </div>
-                    
-                    <div class="faq-items bg-white rounded-b-xl shadow-lg">
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Will the online MBA be recognized while applying for jobs?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, VIT's online MBA degree is UGC-entitled and AICTE-approved and accepted by governments, corporate organizations, and higher education institutions.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">I am a fresher. Am I eligible to apply?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">I am a fresher. Am I eligible to apply?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">There is no minimum work-experience criteria. If you qualify the eligibility criteria, you are eligible.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">There is no minimum work-experience criteria. If you qualify the eligibility criteria, you are eligible.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the duration of the MBA programme?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The MBA programme is 24 months long, delivered in a mixed mode format with both recorded and live sessions.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What is the duration of the MBA programme?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">How many specializations are available?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The programme offers 10+ diverse electives from various domains including Marketing, Finance, HR, Operations, and Business Analytics.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">The MBA programme is 24 months long, delivered in a mixed mode format with both recorded and live sessions.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Is this programme equivalent to an on-campus MBA?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, the online MBA degree is comparable to a postgraduate programme obtained via traditional classroom training and holds the same value.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">How many specializations are available?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What are the key skills I will gain from this MBA?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The programme is designed to equip you with essential skills like Strategic Management, Data Analytics, Business Communications, and Leadership.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">The programme offers 10+ diverse electives from various domains including General Management, Marketing, Operations, Finance, and HRM.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Are there any networking opportunities?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, you'll join the prestigious VIT alumni network with access to exclusive events, networking opportunities, and the annual alumni meet.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">Is this programme equivalent to an on-campus MBA?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the programme fee structure?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The total programme fee is ₹1,80,000 with an application fee of ₹1,200. Financing options and scholarships are available.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Yes, the online MBA degree is comparable to a postgraduate programme obtained via traditional classroom training and holds the same value.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">When does the next batch start?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The January 2026 batch is currently open for admission. The exact start date will be announced soon.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What are the key skills I will gain from this MBA?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What makes VIT's MBA programme unique?</span>
-                                <i class="fas fa-chevron-down text-indigo-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Programme</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">VIT is ranked among India's top universities, offers a comprehensive curriculum with diverse electives, live sessions with faculty, and strong industry recognition.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">The programme is designed to equip you with essential skills like strategic thinking, leadership, financial analysis, marketing strategy, and operational management.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Academics FAQs -->
-                <div class="faq-category" data-aos="fade-up" data-aos-delay="100">
-                    <div class="category-header bg-gradient-to-r from-green-500 to-teal-600 text-white p-6 rounded-t-xl">
-                        <div class="flex items-center">
-                            <i class="fas fa-book-open text-2xl mr-4"></i>
-                            <h3 class="text-2xl font-bold">Academics</h3>
+                <div class="faq-flip-card" data-aos="fade-up">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3 class="faq-flip-card-question">How will the participants be evaluated?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        <p class="mt-2 text-green-100">Learning & Evaluation</p>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <p class="faq-flip-card-answer">Participants will be evaluated through a combination of internal assessment and an end-term examination, with a 30% weightage given to the internal assessment and a 70% weightage assigned to the Final Assessment Test (FAT) or End term exam.</p>
+                        </div>
                     </div>
-                    
-                    <div class="faq-items bg-white rounded-b-xl shadow-lg">
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">How will the participants be evaluated?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Participants will be evaluated through a combination of internal assessment and an end-term examination, with a 30% weightage given to the internal assessment and a 70% weightage assigned to the Final Assessment Test (FAT) or End term exam.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What are the components of Internal Assessment?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What are the components of Internal Assessment?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Internal Assessment has 3 components: Weekly Quiz, Continuous Assessment Test, and Digital Assignment.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Internal Assessment has 3 components: Weekly Quiz, Continuous Assessment Test, and Digital Assignment.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is a proctored examination?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Final Assessment Test (End term examination) will be conducted in centres in offline mode. Currently, VIT has 20 centres across India. VIT centre list will be expanded.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What is a proctored examination?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">How are live sessions conducted?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Live sessions are conducted online by VIT faculty, typically 1 hour per week per subject, along with recorded sessions for flexible learning.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Final Assessment Test (End term examination) will be conducted in centres in offline mode. Currently, VIT has 20 centres across India. VIT centre list will be expanded.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the curriculum structure?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The programme is divided into 4 semesters over 2 years, with core subjects in the first year and specialization electives in the second year.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">How are live sessions conducted?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Are there any practical components in the curriculum?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, the programme includes application-based learning with real-world case studies from companies like Epigamia, ITC, Ola, and others.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Live sessions are conducted online by VIT faculty, typically 1 hour per week per subject, along with recorded sessions for flexible learning.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the minimum passing criteria?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Each participant must get an overall score of at least 50% in each course/subject to successfully complete the programme.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What is the curriculum structure?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Can I access study materials after course completion?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, students typically have access to course materials for a specified period after programme completion.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">The programme is divided into 4 semesters over 2 years, with core subjects in the first year and specialization electives in the second year.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Are there any projects in the curriculum?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, the final semester includes a project component as part of the curriculum.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">Are there any practical components in the curriculum?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Who are the faculty members?</span>
-                                <i class="fas fa-chevron-down text-green-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Academics</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-book-open"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">The programme is taught by VIT's experienced faculty, including Professor Dr. Rajesh M as the Programme Coordinator.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Yes, the programme includes real-world case studies, projects, and assignments that provide practical business experience.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Admission FAQs -->
-                <div class="faq-category" data-aos="fade-up" data-aos-delay="200">
-                    <div class="category-header bg-gradient-to-r from-blue-500 to-cyan-600 text-white p-6 rounded-t-xl">
-                        <div class="flex items-center">
-                            <i class="fas fa-user-graduate text-2xl mr-4"></i>
-                            <h3 class="text-2xl font-bold">Admission</h3>
+                <div class="faq-flip-card" data-aos="fade-up">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3 class="faq-flip-card-question">What is the application process for online degrees?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        <p class="mt-2 text-blue-100">Application Process</p>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <p class="faq-flip-card-answer">Check Eligibility → Submit the Application and Pay the Application Fee → Compile Documents → Application Review and Selection → Pay the Booking Amount Post-Selection</p>
+                        </div>
                     </div>
-                    
-                    <div class="faq-items bg-white rounded-b-xl shadow-lg">
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the application process for online degrees?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Check Eligibility → Submit the Application and Pay the Application Fee → Compile Documents → Application Review and Selection → Pay the Booking Amount Post-Selection</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What are the documents required for admission?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What are the documents required for admission?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">For Indian Regular Category: Passport-sized photo, Digital signature, Proof of age (10th Marksheet), 12th Marksheet, ID Card(Aadhar Card), UG mark statements/UG consolidated mark statements, UG provisional/UG degree, Experience certificate (if any), ABC ID and UGC DEB-ID, Community certificate (for reserved category students only).</p>
-                                <p class="mt-2">For NRI/OCI/Foreign Category: Passport-sized photo, Digital signature, 12th Marksheet, Proof of age, Visa/NRI status of parent/candidate: for NRI candidates only, Proof of nationality (passport/birth certificate/national ID), UG mark statements/UG consolidated mark statements, UG provisional/UG degree, Valid score card (if any), Experience certificate (if any).</p>
-                            </div>
+                            <p class="faq-flip-card-answer">For Indian Regular Category: Passport-sized photo, Digital signature, Proof of age (10th Marksheet), 12th Marksheet, ID Card(Aadhar Card), UG mark statements/UG consolidated mark statements, UG provisional/UG degree, Experience certificate (if any), ABC ID and UGC DEB-ID, Community certificate (for reserved category students only).</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">How can the application form be paid for?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Payment can be made through methods such as Net banking, Credit and Debit cards, and UPI.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">How can the application form be paid for?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the eligibility criteria?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Graduate with minimum 50% marks. There is no minimum work experience required.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Payment can be made through methods such as Net banking, Credit and Debit cards, and UPI.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Are there any scholarships available?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, exclusive scholarships are available for defence personnel and VIT alumni, offering 10% enrolment benefit each.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What is the eligibility criteria?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What financing options are available?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">No-cost instalment and loan options are offered by independent financial institutions to help you focus on learning without financial stress.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Graduate with minimum 50% marks. There is no minimum work experience required.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Is there an application deadline?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Early registrations are encouraged as seats fill up quickly. The exact deadline for the January 2026 batch will be announced.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">Are there any scholarships available?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">Can international students apply?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Yes, NRI/OCI/Foreign students can apply with the required documents including proof of nationality and valid visa if applicable.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">Yes, exclusive scholarships are available for defence personnel and VIT alumni, offering 10% enrolment benefit each.</p>
                         </div>
-                        
-                        <div class="faq-item border-b border-gray-100">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">What is the selection process?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="faq-flip-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-flip-card-inner">
+                        <div class="faq-flip-card-front">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">Selection is based on eligibility criteria and document verification. There is no entrance exam for this programme.</p>
-                            </div>
+                            <h3 class="faq-flip-card-question">What financing options are available?</h3>
+                            <p>Click to see answer</p>
                         </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question flex justify-between items-center p-5 cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span class="font-medium text-gray-800">When will I know if I'm selected?</span>
-                                <i class="fas fa-chevron-down text-blue-500 transition-transform"></i>
+                        <div class="faq-flip-card-back">
+                            <div class="faq-flip-card-category">Admission</div>
+                            <div class="faq-flip-card-icon">
+                                <i class="fas fa-user-graduate"></i>
                             </div>
-                            <div class="faq-answer p-5 bg-gray-50 hidden">
-                                <p class="text-gray-600">After submitting your application and documents, the review process typically takes a few weeks. You'll be notified via email about your selection status.</p>
-                            </div>
+                            <p class="faq-flip-card-answer">No-cost instalment and loan options are offered by independent financial institutions to help you focus on learning without financial stress.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<script>
-// FAQ Toggle Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const icon = question.querySelector('i');
-            
-            // Toggle current FAQ answer
-            answer.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-            
-            // Close other open FAQs in the same category
-            const parentCategory = question.closest('.faq-items');
-            const allAnswers = parentCategory.querySelectorAll('.faq-answer');
-            const allIcons = parentCategory.querySelectorAll('.faq-question i');
-            
-            allAnswers.forEach(otherAnswer => {
-                if (otherAnswer !== answer && !otherAnswer.classList.contains('hidden')) {
-                    otherAnswer.classList.add('hidden');
-                }
-            });
-            
-            allIcons.forEach(otherIcon => {
-                if (otherIcon !== icon && otherIcon.classList.contains('rotate-180')) {
-                    otherIcon.classList.remove('rotate-180');
-                }
-            });
-        });
-    });
-    
-    // Add rotation animation class to CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        .rotate-180 {
-            transform: rotate(180deg);
-        }
-        .faq-question i {
-            transition: transform 0.3s ease;
-        }
-    `;
-    document.head.appendChild(style);
-});
-</script>
+    </section>
 
     <!-- Early Registration CTA Section -->
     <section class="py-16 px-6 section-light">
@@ -3542,10 +3415,16 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
     <script>
-        // Modal Functionality
+        // Modal Functionality - Updated to match MCA code
         const modal = document.getElementById('applicationModal');
         const closeModal = document.querySelector('.close-modal');
         const modalForm = document.querySelector('.modal-form');
+        const headerApplyNow = document.getElementById('headerApplyNow');
+        const mobileApplyNow = document.getElementById('mobileApplyNow');
+        const exploreSpecializations = document.getElementById('exploreSpecializations');
+        const getBrochure = document.getElementById('getBrochure');
+        const applyForMBA = document.getElementById('applyForMBA');
+        const startApplicationNow = document.getElementById('startApplicationNow');
         
         // Function to open modal
         function openModal() {
@@ -3556,28 +3435,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Function to close modal
         function closeModalFunc() {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto'; // Enable scrolling
         }
         
-        // Event listeners for modal buttons
-        document.getElementById('headerApplyNow').addEventListener('click', openModal);
-        document.getElementById('mobileApplyNow').addEventListener('click', openModal);
-        document.getElementById('exploreSpecializations').addEventListener('click', openModal);
-        document.getElementById('getBrochure').addEventListener('click', openModal);
-        document.getElementById('applyForMBA').addEventListener('click', openModal);
-        document.getElementById('startApplicationNow').addEventListener('click', openModal);
+        // Event listeners for opening modal
+        headerApplyNow.addEventListener('click', openModal);
+        mobileApplyNow.addEventListener('click', openModal);
+        exploreSpecializations.addEventListener('click', openModal);
+        getBrochure.addEventListener('click', openModal);
+        applyForMBA.addEventListener('click', openModal);
+        startApplicationNow.addEventListener('click', openModal);
         
-        // Close modal when clicking X or outside modal
+        // Event listener for closing modal
         closeModal.addEventListener('click', closeModalFunc);
+        
+        // Close modal when clicking outside of it
         window.addEventListener('click', function(event) {
             if (event.target === modal) {
                 closeModalFunc();
             }
         });
         
-        // Form submission
-        modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModalFunc();
+            }
+        });
+        
+        // Form submission handler
+        modalForm.addEventListener('submit', function(event) {
+            event.preventDefault();
             // Here you would typically send the form data to a server
             alert('Thank you for your application! We will contact you soon.');
             closeModalFunc();
@@ -3626,22 +3514,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Initialize Charts
-        // Salary Chart
-        const salaryCtx = document.getElementById('salaryChart').getContext('2d');
-        const salaryChart = new Chart(salaryCtx, {
-            type: 'bar',
+        // Work Experience Chart
+        const workExpCtx = document.getElementById('workExperienceChart').getContext('2d');
+        const workExpChart = new Chart(workExpCtx, {
+            type: 'doughnut',
             data: {
-                labels: ['Bachelor\'s Degree', 'MBA Degree'],
+                labels: ['<5 Years', '5-9 Years', '10-14 Years', '15-19 Years', '20+ Years'],
                 datasets: [{
-                    label: 'Median Salary',
-                    data: [100, 177],
+                    data: [15, 24, 8, 48, 5],
                     backgroundColor: [
-                        'rgba(167, 139, 250, 0.7)',
-                        'rgba(79, 70, 229, 0.7)'
+                        'rgba(102, 126, 234, 0.8)',
+                        'rgba(167, 139, 250, 0.8)',
+                        'rgba(79, 70, 229, 0.8)',
+                        'rgba(236, 72, 153, 0.8)',
+                        'rgba(16, 185, 129, 0.8)'
                     ],
                     borderColor: [
+                        'rgba(102, 126, 234, 1)',
                         'rgba(167, 139, 250, 1)',
-                        'rgba(79, 70, 229, 1)'
+                        'rgba(79, 70, 229, 1)',
+                        'rgba(236, 72, 153, 1)',
+                        'rgba(16, 185, 129, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -3649,8 +3542,46 @@ document.addEventListener('DOMContentLoaded', function() {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: { size: 12 },
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Job Functions Chart
+        const jobFuncCtx = document.getElementById('jobFunctionsChart').getContext('2d');
+        const jobFuncChart = new Chart(jobFuncCtx, {
+            type: 'bar',
+            data: {
+                labels: ['IT/Technology', 'Sales', 'Engineering', 'HR', 'Operations', 'Finance', 'Research', 'Strategy', 'Education', 'Consulting', 'Legal', 'Manufacturing'],
+                datasets: [{
+                    label: 'Percentage of Participants',
+                    data: [22, 18, 15, 12, 10, 8, 5, 4, 3, 2, 1, 0.5],
+                    backgroundColor: 'rgba(79, 70, 229, 0.7)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
                 scales: {
-                    y: {
+                    x: {
                         beginAtZero: true,
                         ticks: {
                             color: '#475569',
@@ -3660,49 +3591,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         },
                         grid: { color: 'rgba(203, 213, 225, 0.3)' }
                     },
-                    x: {
-                        ticks: { color: '#475569' },
+                    y: {
+                        ticks: { 
+                            color: '#475569',
+                            font: { size: 11 }
+                        },
                         grid: { color: 'rgba(203, 213, 225, 0.1)' }
                     }
                 },
                 plugins: {
                     legend: {
                         display: false
-                    }
-                }
-            }
-        });
-        
-        // Hiring Chart
-        const hiringCtx = document.getElementById('hiringChart').getContext('2d');
-        const hiringChart = new Chart(hiringCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['MBA Graduates', 'Other Graduates'],
-                datasets: [{
-                    data: [91, 9],
-                    backgroundColor: [
-                        'rgba(79, 70, 229, 0.7)',
-                        'rgba(167, 139, 250, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(79, 70, 229, 1)',
-                        'rgba(167, 139, 250, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            font: { size: 14, weight: 'bold' },
-                            padding: 20,
-                            usePointStyle: true
-                        }
                     }
                 }
             }
@@ -3748,19 +3647,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // FAQ toggle functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
+        // FAQ flip card functionality
+        const faqFlipCards = document.querySelectorAll('.faq-flip-card');
         
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const toggle = question.querySelector('.faq-toggle');
-                
-                // Toggle current FAQ answer
-                answer.classList.toggle('active');
-                toggle.classList.toggle('active');
+        faqFlipCards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('flipped');
             });
         });
     </script>
 </body>
 </html>
+
